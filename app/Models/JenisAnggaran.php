@@ -11,6 +11,6 @@ class JenisAnggaran extends Model
 
     public function kelompok_jenis_anggaran()
     {
-        return $this->hasMany('App\KelompokJenisAnggaran');
+        return $this->hasMany('App\Models\KelompokJenisAnggaran');
     }
 }

@@ -11,11 +11,11 @@ class CetakSurat extends Model
 
     public function surat()
     {
-        return $this->belongsTo('App\Surat');
+        return $this->belongsTo('App\Models\Surat');
     }
 
     public function detailCetak()
     {
-        return $this->hasMany('App\DetailCetak');
+        return $this->hasMany('App\Models\DetailCetak');
     }
 }

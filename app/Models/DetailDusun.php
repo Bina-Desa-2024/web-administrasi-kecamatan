@@ -11,11 +11,11 @@ class DetailDusun extends Model
 
     public function penduduk()
     {
-        return $this->hasMany('App\Penduduk');
+        return $this->hasMany('App\Models\Penduduk');
     }
 
     public function dusun()
     {
-        return $this->belongsTo('App\Dusun');
+        return $this->belongsTo('App\Models\Dusun');
     }
 }

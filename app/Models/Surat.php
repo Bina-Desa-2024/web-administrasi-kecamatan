@@ -11,11 +11,11 @@ class Surat extends Model
 
     public function isiSurat()
     {
-        return $this->hasMany('App\IsiSurat', 'surat_id');
+        return $this->hasMany('App\Models\IsiSurat', 'surat_id');
     }
 
     public function cetakSurat()
     {
-        return $this->hasMany('App\CetakSurat', 'surat_id');
+        return $this->hasMany('App\Models\CetakSurat', 'surat_id');
     }
 }

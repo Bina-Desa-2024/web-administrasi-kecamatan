@@ -11,36 +11,36 @@ class Penduduk extends Model
 
     public function pekerjaan()
     {
-        return $this->belongsTo('App\Pekerjaan');
+        return $this->belongsTo('App\Models\Pekerjaan');
     }
 
     public function pendidikan()
     {
-        return $this->belongsTo('App\Pendidikan');
+        return $this->belongsTo('App\Models\Pendidikan');
     }
 
     public function agama()
     {
-        return $this->belongsTo('App\Agama');
+        return $this->belongsTo('App\Models\Agama');
     }
 
     public function darah()
     {
-        return $this->belongsTo('App\Darah');
+        return $this->belongsTo('App\Models\Darah');
     }
 
     public function detailDusun()
     {
-        return $this->belongsTo('App\DetailDusun');
+        return $this->belongsTo('App\Models\DetailDusun');
     }
 
     public function statusHubunganDalamKeluarga()
     {
-        return $this->belongsTo('App\StatusHubunganDalamKeluarga');
+        return $this->belongsTo('App\Models\StatusHubunganDalamKeluarga');
     }
 
     public function statusPerkawinan()
     {
-        return $this->belongsTo('App\StatusPerkawinan');
+        return $this->belongsTo('App\Models\StatusPerkawinan');
     }
 }

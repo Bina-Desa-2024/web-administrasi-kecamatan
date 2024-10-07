@@ -11,6 +11,6 @@ class DetailCetak extends Model
 
     public function detailCetak()
     {
-        return $this->belongsTo('App\CetakSurat');
+        return $this->belongsTo('App\Models\CetakSurat');
     }
 }

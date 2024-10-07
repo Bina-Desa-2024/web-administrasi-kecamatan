@@ -11,6 +11,6 @@ class AnggaranRealisasi extends Model
 
     public function detail_jenis_anggaran()
     {
-        return $this->belongsTo('App\DetailJenisAnggaran');
+        return $this->belongsTo('App\Models\DetailJenisAnggaran');
     }
 }

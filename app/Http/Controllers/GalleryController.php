@@ -127,7 +127,7 @@ class GalleryController extends Controller
             'slider' => ''
         ]);
         if($request->file('gallery')) {
-            $validatedData['gallery'] = $request->file('gallery')->store('gambars');
+            $validatedData['gallery'] = $request->file('gallery')->store('gambars', 'public');
         }
         Gallery::create($validatedData);
 

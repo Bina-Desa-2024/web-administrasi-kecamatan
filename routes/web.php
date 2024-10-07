@@ -9,6 +9,7 @@ use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\CetakSuratController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\GrafikController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\DesaController;
 use App\Http\Controllers\IsiSuratController;

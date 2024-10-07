@@ -11,6 +11,6 @@ class Dusun extends Model
 
     public function detailDusun()
     {
-        return $this->hasMany('App\DetailDusun');
+        return $this->hasMany('App\Models\DetailDusun');
     }
 }

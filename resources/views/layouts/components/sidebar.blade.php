@@ -43,7 +43,7 @@
             <div class="row">
                 <div class="col-6 collapse-brand">
                     <a href="{{ route('home.index') }}">
-                        <h1 class="text-primary"><b>Desa {{ $desa->nama_desa }}</b></h1>
+                        <h1 class="text-primary"><b>DUSUN {{ $desa->nama_desa }}</b></h1>
                     </a>
                 </div>
                 <div class="col-6 collapse-close">

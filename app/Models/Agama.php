@@ -11,6 +11,6 @@ class Agama extends Model
 
     public function penduduk()
     {
-        return $this->hasMany('App\Penduduk');
+        return $this->hasMany('App\Models\Penduduk');
     }
 }
