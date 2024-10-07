@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Agama;
-use App\Darah;
-use App\Dusun;
 use App\Http\Requests\PendudukRequest;
-use App\Pekerjaan;
-use App\Pendidikan;
-use App\Penduduk;
-use App\StatusHubunganDalamKeluarga;
-use App\StatusPerkawinan;
+use App\Models\Agama;
+use App\Models\Darah;
+use App\Models\Dusun;
+use App\Models\Pekerjaan;
+use App\Models\Pendidikan;
+use App\Models\Penduduk;
+use App\Models\StatusHubunganDalamKeluarga;
+use App\Models\StatusPerkawinan;
 use Illuminate\Http\Request;
 
 class PendudukController extends Controller

@@ -1,6 +1,6 @@
 <?php
 namespace Database\Seeders;
-use App\Darah;
+use App\Models\Darah;
 use Illuminate\Database\Seeder;
 
 class DarahSeeder extends Seeder

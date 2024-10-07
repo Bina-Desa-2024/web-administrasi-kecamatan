@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Berita;
-use App\Desa;
-use App\Gallery;
-use App\PemerintahanDesa;
-use App\Penduduk;
-use App\Surat;
-use App\Video;
+use App\Models\Berita;
+use App\Models\Desa;
+use App\Models\Gallery;
+use App\Models\PemerintahanDesa;
+use App\Models\Penduduk;
+use App\Models\Surat;
+use App\Models\Video;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller

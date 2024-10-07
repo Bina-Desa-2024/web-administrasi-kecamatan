@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Desa;
+use App\Models\Desa;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Validator;

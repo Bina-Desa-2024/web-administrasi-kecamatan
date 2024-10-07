@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Desa;
-use App\Gallery;
-use App\Video;
+use App\Models\Desa;
+use App\Models\Gallery;
+use App\Models\Video;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 

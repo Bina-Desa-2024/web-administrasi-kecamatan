@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Berita;
-use App\Desa;
+use App\Models\Berita;
+use App\Models\Desa;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;

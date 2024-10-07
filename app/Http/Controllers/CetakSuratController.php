@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Desa;
-use App\Surat;
+use App\Models\Desa;
+use App\Models\Surat;
 use Barryvdh\DomPDF\Facade as PDF;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
-use App\CetakSurat;
-use App\DetailCetak;
+use App\Models\CetakSurat;
+use App\Models\DetailCetak;
 use Illuminate\Http\Request;
 
 class CetakSuratController extends Controller

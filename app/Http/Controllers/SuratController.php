@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\CetakSurat;
-use App\Desa;
-use App\IsiSurat;
-use App\Surat;
+use App\Models\CetakSurat;
+use App\Models\Desa;
+use App\Models\IsiSurat;
+use App\Models\Surat;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 

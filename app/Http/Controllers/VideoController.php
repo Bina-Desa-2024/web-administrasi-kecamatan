@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Desa;
-use App\Video;
+use App\Models\Desa;
+use App\Models\Video;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 

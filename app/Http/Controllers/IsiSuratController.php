@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\IsiSurat;
+use App\Models\IsiSurat;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 

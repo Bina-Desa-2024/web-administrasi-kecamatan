@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Desa;
-use App\PemerintahanDesa;
+use App\Models\Desa;
+use App\Models\PemerintahanDesa;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\File;

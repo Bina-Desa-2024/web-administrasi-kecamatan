@@ -1,6 +1,6 @@
 <?php
 namespace Database\Seeders;
-use App\Pekerjaan;
+use App\Models\Pekerjaan;
 use Illuminate\Database\Seeder;
 
 class PekerjaanSeeder extends Seeder

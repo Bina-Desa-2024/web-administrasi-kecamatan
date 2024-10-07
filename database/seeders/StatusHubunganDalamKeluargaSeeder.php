@@ -1,6 +1,6 @@
 <?php
 namespace Database\Seeders;
-use App\StatusHubunganDalamKeluarga;
+use App\Models\StatusHubunganDalamKeluarga;
 use Illuminate\Database\Seeder;
 
 class StatusHubunganDalamKeluargaSeeder extends Seeder

@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\AnggaranRealisasi;
-use App\Desa;
-use App\DetailJenisAnggaran;
-use App\JenisAnggaran;
-use App\KelompokJenisAnggaran;
+use App\Models\AnggaranRealisasi;
+use App\Models\Desa;
+use App\Models\DetailJenisAnggaran;
+use App\Models\JenisAnggaran;
+use App\Models\KelompokJenisAnggaran;
 use Illuminate\Http\Request;
 
 class AnggaranRealisasiController extends Controller

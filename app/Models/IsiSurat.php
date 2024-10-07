@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -11,6 +11,6 @@ class IsiSurat extends Model
 
     public function surat()
     {
-        return $this->belongsTo('App\Surat', 'surat_id');
+        return $this->belongsTo('App\Models\Surat', 'surat_id');
     }
 }
