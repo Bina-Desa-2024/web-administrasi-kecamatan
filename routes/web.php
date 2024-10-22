@@ -33,3 +33,7 @@ Route::get('/loginadmin', function () {
 Route::get('/Dashboard', function () {
     return view('Dashboard Admin.index');
 });
+
+Route::get('/DataPenduduk', function () {
+    return view('Dashboard Admin.Datapenduduk');
+});

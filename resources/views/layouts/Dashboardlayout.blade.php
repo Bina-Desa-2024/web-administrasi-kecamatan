@@ -125,7 +125,7 @@
         <span class="menu-title">Dashboard</span>
       </a>
     </li><li class="nav-item">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="/DataPenduduk">
           <i class="icon-head menu-icon"></i>
           <span class="menu-title">Data Penduduk</span>
         </a>
@@ -148,6 +148,7 @@
         <!-- partial -->
         <div class="main-panel">
           <div class="content-wrapper">
+            <div class="row">
            @yield('child')
           </div>
           <!-- content-wrapper ends -->
