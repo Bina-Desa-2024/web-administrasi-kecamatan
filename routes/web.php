@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\SuratController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,8 +20,12 @@ Route::get('/', function () {
 
 Route::get('/buatsurat', function () {
     return view('buatsurat');
-})->name('/');
+});
 
 Route::get('/tentang', function () {
     return view('tentang');
-})->name('/');
+});
+Route::post('/buat-surat', [SuratController::class, 'buatSurat'])->name('surat.redirect');
+Route::get('/loginadmin', function () {
+    return view('login');
+});
