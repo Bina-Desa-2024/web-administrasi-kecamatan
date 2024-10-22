@@ -9,9 +9,15 @@
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 </head>
-
+<style>
+  body {
+    background-image: url('img/background3.jpg');
+    background-size: cover;
+    
+  }
+</style>
 <body >
-    <nav class="navbar navbar-expand-lg bg-primary">
+    <nav class="navbar navbar-expand-lg ">
         <div class="container-fluid d-flex justify-content-between">
           <a class="navbar-brand" href="/"><img class="navbar-brand" src="{{url('/img/e-SuratDesa.png')}}" alt=""></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,7 +45,7 @@
         @yield('child')
     </main>
 
-    <footer class="bg-primary">
+    <footer class="text-white">
         Copyright © 2024 e-SuratDesa. All rights reserved.
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"

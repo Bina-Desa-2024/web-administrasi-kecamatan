@@ -1,6 +1,6 @@
 @extends('layouts.userlayout')
 @section('child')
-    <div class="container shadow rounded p-4 min-vh-100 w-75 mx-auto" style="margin: 40px;">
+    <div class="container shadow rounded p-4 min-vh-100 w-75 mx-auto bg-light" style="margin: 40px;">
         <h3>
             APA ITU e-SuratDesa?
         </h3>
