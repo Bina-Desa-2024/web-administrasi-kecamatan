@@ -18,3 +18,10 @@ Route::get('/', function () {
     return view('index');
 })->name('/');
 
+Route::get('/buatsurat', function () {
+    return view('buatsurat');
+})->name('/');
+
+Route::get('/tentang', function () {
+    return view('tentang');
+})->name('/');

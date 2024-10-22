@@ -10,7 +10,7 @@
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body >
     <nav class="navbar navbar-expand-lg bg-primary">
         <div class="container-fluid">
           <a class="navbar-brand" href="/"><img class="navbar-brand" src="{{url('/img/e-SuratDesa.png')}}" alt=""></a>
@@ -23,10 +23,10 @@
                 <a class="nav-link text-white" href="/">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white" href="/">Buat Surat</a>
+                <a class="nav-link text-white" href="/buatsurat">Buat Surat</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white" href="/">TENTANG <strong>e-Surat Desa</strong></a>
+                <a class="nav-link text-white" href="/tentang">TENTANG <strong>e-Surat Desa</strong></a>
               </li>
               <button class="btn btn-light text-primary">LOGIN</button>
             </ul>
