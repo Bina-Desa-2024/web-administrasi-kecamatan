@@ -15,17 +15,17 @@ use App\Http\Controllers\SuratController;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('enduser.index');
 })->name('/');
 
 Route::get('/buatsurat', function () {
-    return view('buatsurat');
+    return view('enduser.buatsurat');
 });
 
 Route::get('/tentang', function () {
-    return view('tentang');
+    return view('enduser.tentang');
 });
-Route::post('/buat-surat', [SuratController::class, 'buatSurat'])->name('surat.redirect');
+Route::post('/enduser.buat-surat', [SuratController::class, 'buatSurat'])->name('surat.redirect');
 Route::get('/loginadmin', function () {
     return view('login');
 });
