@@ -29,3 +29,7 @@ Route::post('/buat-surat', [SuratController::class, 'buatSurat'])->name('surat.r
 Route::get('/loginadmin', function () {
     return view('login');
 });
+
+Route::get('/Dashboard', function () {
+    return view('Dashboard Admin.index');
+});
