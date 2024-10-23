@@ -37,3 +37,15 @@ Route::get('/Dashboard', function () {
 Route::get('/DataPenduduk', function () {
     return view('Dashboard Admin.Datapenduduk');
 });
+
+Route::get('/PermintaanSurat', function () {
+    return view('Dashboard Admin.PermintaanSurat');
+});
+
+Route::get('/SuratSelesai', function () {
+    return view('Dashboard Admin.SuratSelesai');
+});
+
+Route::get('/TambahData', function () {
+    return view('Dashboard Admin.TambahData');
+});
