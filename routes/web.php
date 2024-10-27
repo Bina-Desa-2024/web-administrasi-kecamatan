@@ -28,7 +28,10 @@ Route::get('/tentang', function () {
 Route::get('/buat-surat/{jenis}', function ($jenis) {
     return view('enduser.konfirmasisurat', ['jenis_surat'=> $jenis]);
 });
-
+Route::post('/konfirmasi-surat', [SuratController::class, 'konfirmasiSurat']);
+Route::get('/isisurat', function () {
+    return view('enduser.isisurat');
+});
 Route::get('/loginadmin', function () {
     return view('login');
 });
