@@ -6,13 +6,18 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
+
 
 <style>
-    body, h1, h2, h3, p {
+    body, h2, h3, p {
         font-family: 'Poppins', sans-serif;
     }
 
-    /* Other styles */
+    .h1 {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 500;
+}
 </style>
 
 <section class="section hero text-center d-flex align-items-center justify-content-center min-vh-100" id="home" aria-label="hero" style="background-color: #e9f5f2;"> <!-- Light teal background -->
@@ -20,24 +25,20 @@
         <div class="hero-content text-center text-md-start d-flex flex-column flex-md-row align-items-center justify-content-between">
             <div class="text-content mb-4 mb-md-0">
                 <h1 class="h1 mb-4">
-                    Your technology partner for Innovative and Impactful 
-                    <br />
-                    <span class="text-success pt-2">
-                        E-Waste Recycling Solution
-                    </span>
+                    Aplikasi Pelayanan Surat Administrasi Desa Rukma Jaya
                 </h1>
-
+{{-- 
                 <p class="text-muted mb-4">
-                    <span class="text-success">go</span><span class="text-warning">Change</span>: Transforming E-Waste Management. Find E-waste facilities effortlessly with our platform. Your key to responsible recycling and sustainability.
-                </p>
+                   Solusi Terbaik untuk Pengelolaan Surat yang Efisien, Praktis, dan Mudah Diakses Kapan Saja dan Di Mana Saja! 
+                </p> --}}
 
                 <div class="d-flex flex-column flex-md-row align-items-center justify-content-center justify-content-md-start gap-3 mb-4">
                     <a href="{{ url('/recycle') }}" class="btn btn-success">
                         Start Recycling
                     </a>
-                    <a href="{{ url('/maps') }}" class="btn btn-success">
+                    {{-- <a href="{{ url('/maps') }}" class="btn btn-success">
                         Locate Facility
-                    </a>
+                    </a> --}}
                 </div>
             </div>
 
@@ -174,38 +175,3 @@
     </div>
 </section>
 @endsection
-
-
-    {{-- <style>
-        body {
-            overflow: hidden; /* Mencegah scroll di halaman ini */
-        }
-        h3 {
-            text-align: left; /* Membuat tulisan rata kiri */
-        }
-        .content-wrapper {
-            padding-left: 20px; /* Menambahkan ruang di kiri konten */
-            max-width: 800px; 
-            width: 100%; /* Membuatnya responsif pada layar kecil */
-        }
-    </style>
-
-    <div class="min-vh-100 d-flex flex-column justify-content-center container">
-        <div class="content-wrapper"> <!-- Konten dibatasi dan tidak terlalu ke kiri -->
-            {{-- <img style="width: 200px" src="{{ url('/img/logo-jombang1.png') }}" alt=""> --}}
-            {{-- <h2 class="text-white mt-4">
-                <strong>Selamat Datang di Web Aplikasi Pelayanan Surat Administrasi Desa Rukma Jaya</strong>
-            </h2>
-
-
-            <!-- Button dengan ikon pesan -->
-            <a href="/buatsurat" class="btn btn-light text-primary mt-4">
-                <i class="fas fa-envelope"></i> Buat Surat
-            </a>
-        </div>
-    </div> --}}
-
-
-
-
-
