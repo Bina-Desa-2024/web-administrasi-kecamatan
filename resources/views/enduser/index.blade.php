@@ -33,8 +33,8 @@
                 </p> --}}
 
                 <div class="d-flex flex-column flex-md-row align-items-center justify-content-center justify-content-md-start gap-3 mb-4">
-                    <a href="{{ url('/recycle') }}" class="btn btn-success">
-                        Start Recycling
+                    <a href="{{ url('/buatsurat') }}" class="btn btn-success">
+                        Buat Surat
                     </a>
                     {{-- <a href="{{ url('/maps') }}" class="btn btn-success">
                         Locate Facility

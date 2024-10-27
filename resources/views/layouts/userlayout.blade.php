@@ -84,7 +84,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container">
-            <a class="navbar-brand text-warning" href="/"><span class="text-success">go</span>Change</a> 
+            <a class="navbar-brand text-warning" href="/"><span class="text-success">e</span>Surat</a> 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -95,20 +95,10 @@
                         <a class="nav-link {{ request()->is('/') ? 'active' : '' }}" href="/">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->is('maps') ? 'active' : '' }}" href="/maps">Maps</a>
+                        <a class="nav-link {{ request()->is('About') ? 'active' : '' }}" href="/tentang">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->is('recycle') ? 'active' : '' }}" href="/recycle">Recycle</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {{ request()->is('education') ? 'active' : '' }}"
-                            href="#">Education</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {{ request()->is('contact') ? 'active' : '' }}" href="/Contact">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {{ request()->is('history') ? 'active' : '' }}" href="/history">History</a>
+                        <a class="nav-link {{ request()->is('Surat') ? 'active' : '' }}" href="/buatsurat">Surat</a>
                     </li>
                 </ul>
             </div>
