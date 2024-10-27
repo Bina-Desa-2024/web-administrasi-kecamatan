@@ -25,7 +25,10 @@ Route::get('/buatsurat', function () {
 Route::get('/tentang', function () {
     return view('enduser.tentang');
 });
-Route::post('/enduser.buat-surat', [SuratController::class, 'buatSurat'])->name('surat.redirect');
+Route::get('/buat-surat/{jenis}', function ($jenis) {
+    return view('enduser.konfirmasisurat', ['jenis_surat'=> $jenis]);
+});
+
 Route::get('/loginadmin', function () {
     return view('login');
 });
