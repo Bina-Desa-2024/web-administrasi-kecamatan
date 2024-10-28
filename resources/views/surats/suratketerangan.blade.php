@@ -1,106 +1,116 @@
 @extends('layouts.userlayout')
 @section('child')
-<div class="container" style="max-height:cover; padding-top:30px;  padding-bottom:60px; position:relative; min-height: 100%;">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="card">
-                <h5 class="card-header"><i class="fas fa-envelope"></i> INFORMASI SURAT</h5>
-                <br>
-                <div class="container-fluid">
+<div class="container py-5" style="min-height: 100vh;">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <div class="card shadow border-0">
+                <!-- Header Card -->
+                <div class="card-header bg-success text-white text-center py-3">
+                    <h4 class="mb-0"><i class="fas fa-envelope me-2"></i> Informasi Usaha</h4>
+                </div>
+
+                <!-- Body Card -->
+                <div class="card-body px-5">
+                    <!-- Informasi Pemilik -->
+                    <h6 class="text-primary mb-3"><i class="fas fa-user me-2"></i>Informasi Pemilik</h6>
                     <div class="row">
-                        <h5 class="col-sm-6"><b>SURAT KETERANGAN</b></h5>
-                        <h5 class="col-sm-6"><b>NOMOR SURAT : -</b></h5>
+                        <!-- Left Column -->
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">Nama Lengkap</label>
+                                <input type="text" name="nama" class="form-control" placeholder="Masukkan Nama Lengkap" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">Tempat, Tgl Lahir</label>
+                                <input type="text" name="tempat_tgl_lahir" class="form-control" placeholder="Masukkan Tempat, Tgl Lahir" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">Pekerjaan</label>
+                                <input type="text" name="pekerjaan" class="form-control" placeholder="Masukkan Pekerjaan" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">Alamat</label>
+                                <textarea name="alamat" class="form-control" rows="2" placeholder="Masukkan Alamat" required></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Right Column -->
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">Desa/Kel</label>
+                                <input type="text" name="desa" class="form-control" placeholder="Masukkan Desa/Kel" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">Kecamatan</label>
+                                <input type="text" name="kecamatan" class="form-control" placeholder="Masukkan Kecamatan" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">Kabupaten/Kota</label>
+                                <input type="text" name="kabupaten" class="form-control" placeholder="Masukkan Kabupaten/Kota" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Informasi Usaha -->
+                    <h6 class="text-primary mt-4 mb-3"><i class="fas fa-store me-2"></i>Informasi Usaha</h6>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">Nama Usaha</label>
+                                <input type="text" name="nama_usaha" class="form-control" placeholder="Masukkan Nama Usaha" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">Alamat Usaha</label>
+                                <textarea name="alamat_usaha" class="form-control" rows="2" placeholder="Masukkan Alamat Usaha" required></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">Desa</label>
+                                <input type="text" name="desa_usaha" class="form-control" placeholder="Masukkan Desa Usaha" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">Kecamatan</label>
+                                <input type="text" name="kecamatan_usaha" class="form-control" placeholder="Masukkan Kecamatan Usaha" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">Bidang Usaha</label>
+                                <input type="text" name="bidang_usaha" class="form-control" placeholder="Masukkan Bidang Usaha" required>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">Jenis Tempat Usaha</label>
+                                <input type="text" name="jenis_tempat" class="form-control" placeholder="Masukkan Jenis Tempat Usaha" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">Status Tempat Usaha</label>
+                                <input type="text" name="status_tempat" class="form-control" placeholder="Masukkan Status Tempat Usaha" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">Bentuk Usaha</label>
+                                <input type="text" name="bentuk_usaha" class="form-control" placeholder="Masukkan Bentuk Usaha" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">Modal Usaha</label>
+                                <input type="text" name="modal_usaha" class="form-control" placeholder="Masukkan Modal Usaha" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">Jumlah Tenaga Kerja</label>
+                                <input type="text" name="tenaga_kerja" class="form-control" placeholder="Masukkan Jumlah Tenaga Kerja" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">Mulai Usaha Sejak</label>
+                                <input type="text" name="mulai_usaha" class="form-control" placeholder="Masukkan Tahun Mulai Usaha" required>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <hr>
-                <form method="post" action="">
-                    <h6 class="container-fluid" ><i class="fas fa-user"></i> Informasi Pribadi</h6><hr width="97%">
-                    <div class="row" style="padding: 0 20px 0 20px">
-                        <div class="col-sm-6">
-                            <div class="form-group">
-                                   <label class="col-sm-12 mt-3" style="font-weight: 500;">Nama Lengkap</label>
-                                   <div class="col-sm-12 mt-1">
-                                       <input type="text" name="fnama" class="form-control" style="text-transform: capitalize;" value="" readonly>
-                                   </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="form-group">
-                                   <label class="col-sm-12 mt-3" style="font-weight: 500;">Jenis Kelamin</label>
-                                   <div class="col-sm-12 mt-1">
-                                       <input type="text" name="fjenis_kelamin" class="form-control" style="text-transform: capitalize;" value="" readonly>
-                                   </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="form-group">
-                                   <label class="col-sm-12 mt-3" style="font-weight: 500;">Tempat, Tgl Lahir</label>
-                                   <div class="col-sm-12 mt-1">
-                                       <input type="text" name="ftempat_tgl_lahir" class="form-control" style="text-transform: capitalize;" value="" readonly>
-                                   </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="form-group">
-                                   <label class="col-sm-12 mt-3" style="font-weight: 500;">Agama</label>
-                                   <div class="col-sm-12 mt-1">
-                                       <input type="text" name="fagama" class="form-control" style="text-transform: capitalize;" value="" readonly>
-                                   </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row" style="padding: 0 20px 0 20px">
-                        <div class="col-sm-6">
-                            <div class="form-group">
-                                   <label class="col-sm-12 mt-3" style="font-weight: 500;">Pekerjaan</label>
-                                   <div class="col-sm-12 mt-1">
-                                       <input type="text" name="fpekerjaan" class="form-control" style="text-transform: capitalize;" value="" readonly>
-                                   </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                              <div class="form-group">
-                                   <label class="col-sm-12 mt-3" style="font-weight: 500;">NIK</label>
-                                   <div class="col-sm-12 mt-1">
-                                       <input type="text" name="fnik" class="form-control" value="" readonly>
-                                   </div>
-                            </div>
-                          </div>
-                          <div class="col-sm-6">
-                              <div class="form-group">
-                                   <label class="col-sm-12 mt-3" style="font-weight: 500;">Alamat</label>
-                                   <div class="col-sm-12 mt-1">
-                                       <textarea type="text" name="falamat" class="form-control" style="text-transform: capitalize;" readonly></textarea>
-                                   </div>
-                            </div>
-                          </div>
-                        <div class="col-sm-6">
-                            <div class="form-group">
-                                   <label class="col-sm-12 mt-3" style="font-weight: 500;">Kewarganegaraan</label>
-                                   <div class="col-sm-12 mt-1">
-                                       <input type="text" name="fkewarganegaraan" class="form-control" style="text-transform: uppercase;" value="" readonly>
-                                   </div>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                    <h6 class="container-fluid" ><i class="fas fa-edit"></i> Formulir Surat</h6><hr width="97%">
-                    <div class="row" style="padding: 0 20px 0 20px">
-                          <div class="col-sm-12">
-                              <div class="form-group">
-                                   <label class="col-sm-12" style="font-weight: 500;">Keperluan Surat</label>
-                                   <div class="col-sm-12">
-                                       <input type="text" name="fkeperluan" class="form-control" style="text-transform: capitalize;" placeholder="Masukkan Keperluan Surat" required>
-                                   </div>
-                            </div>
-                          </div>
-                    </div>
-                    <hr width="97%">
-                    <div class="container-fluid" style="padding-bottom: 20px;">
-                        <input type="reset" class="btn btn-warning" value="Batal" style="margin-right:15px">
-                        <input type="submit" name="submit" class="btn btn-info" value="Submit">
-                      </div>
-                </form>
+
+                <!-- Footer Card (Action Buttons) -->
+                <div class="card-footer bg-light text-center py-3">
+                    <button type="reset" class="btn btn-warning me-2">Batal</button>
+                    <button type="submit" name="submit" class="btn btn-success">Submit</button>
+                </div>
             </div>
         </div>
     </div>

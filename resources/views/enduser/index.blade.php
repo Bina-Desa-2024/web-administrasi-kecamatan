@@ -33,7 +33,7 @@
                 </p> --}}
 
                 <div class="d-flex flex-column flex-md-row align-items-center justify-content-center justify-content-md-start gap-3 mb-4">
-                    <a href="{{ url('/recycle') }}" class="btn btn-success">
+                    <a href="{{ url('/buatsurat') }}" class="btn btn-success">
                         Buat Surat
                     </a>
                     {{-- <a href="{{ url('/maps') }}" class="btn btn-success">
@@ -43,7 +43,7 @@
             </div>
 
             <div class="col-md-6 d-flex justify-content-center mb-4 mb-md-0">
-                <img src="https://img.freepik.com/free-photo/man-proud-himself_1368-1756.jpg?t=st=1729888065~exp=1729891665~hmac=a4c05f6645d586bf991a7bc054f9ba349647f14b0d916adf907e532b0f1343cf&w=900" alt="E-Waste Banner" class="img-fluid rounded-circle" style="max-width: 485px; ">
+                <img src="{{ asset('img/postman.jpg') }}"  alt="Mail Banner" class="img-fluid rounded-circle" style="max-width: 485px; ">
             </div>
         </div>
     </div>
