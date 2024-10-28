@@ -33,9 +33,41 @@ Route::post('/konfirmasi-surat', [SuratController::class, 'konfirmasiSurat']);
 Route::get('/isisurat', function () {
     return view('enduser.isisurat');
 });
-Route::get('/suratketerangan', function () {
-    return view('surats.suratketerangan');
+// surat-surat
+Route::get('/suketkelakuanbaik', function () {
+    return view('surats.suketkelakuanbaik');
 });
+Route::get('/suratizinkeramain', function () {
+    return view('surats.suratizinkeramain');
+});
+Route::get('/suketusaha', function () {
+    return view('surats.suketusaha');
+});
+Route::get('/suketbedanama', function () {
+    return view('surats.suketbedanama');
+});
+Route::get('/suketahliwaris', function () {
+    return view('surats.suketahliwaris');
+});
+Route::get('/suketbelummenikah', function () {
+    return view('surats.suketbelummenikah');
+});
+Route::get('/suketkematian', function () {
+    return view('surats.suketkematian');
+});
+Route::get('/suratpenetapanbpd', function () {
+    return view('surats.suratpenetapanbpd');
+});
+Route::get('/suratpenyerahantanah', function () {
+    return view('surats.suratpenyerahantanah');
+});
+Route::get('/superahliwaris', function () {
+    return view('surats.superahliwaris');
+});
+Route::get('/supertanah', function () {
+    return view('surats.supertanah');
+});
+// login
 Route::get('/loginadmin', function () {
     return view('login');
 });
