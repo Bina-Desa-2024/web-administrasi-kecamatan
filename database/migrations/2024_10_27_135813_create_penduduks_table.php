@@ -15,10 +15,26 @@ return new class extends Migration
             $table->id();
             $table->string("nik");
             $table->string("nama");
-            $table->string("tempat_tgl_lahir");
+            $table->string("tempat");
+            $table->date("tgl_lahir");
             $table->string("jenis_kelamin");
+            $table->string("pekerjaan");
             $table->string("agama");
-            $table->string("alamat");
+            $table->string("jalan");
+            $table->string("rt");
+            $table->string("rw");
+            $table->string("desa");
+            $table->string("dusun");
+            $table->string("kecamatan");
+            $table->string("no_kk");
+            $table->string("kota");
+            $table->string("pend_terakhir");
+            $table->string("pend_ditempuh");
+            $table->string("status_perkawinan");
+            $table->string("status_dalam_keluarga");
+            $table->string("kewarganegaraan");
+            $table->string("nama_ayah");
+            $table->string("nama_ibu");
             $table->timestamps();
         });
     }

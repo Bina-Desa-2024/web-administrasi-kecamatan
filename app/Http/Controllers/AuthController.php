@@ -14,14 +14,15 @@ class AuthController extends Controller
 
     public function masuk(Request $request)
     {
+        
         $credentials = $request->validate([
-            'email' => 'required',
+            'username' => 'required',
             'password' => 'required'
         ]);
 
         if(Auth::attempt($credentials)){
             $request->session()->regenerate();
-            return redirect()->intended('dashboard');
+            return redirect()->intended('Dashboard');
         }
 
         return back()->with('LoginError', 'Login gagal!');
@@ -34,9 +35,11 @@ class AuthController extends Controller
         // return redirect()->route('dashboard');
     }
 
-    public function keluar()
+    public function keluar(Request $request)
     {
         Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
         return redirect()->route('home.index');
     }
 }

@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Penduduk;
+use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -17,12 +18,88 @@ class DatabaseSeeder extends Seeder
 
 
         Penduduk::create([
-            'nik' => '1234567890',
-            'nama' => 'Siti Aisyah',
-            'tempat_tgl_lahir' => 'Jakarta, 01-01-1990',
-            'jenis_kelamin' => 'Perempuan',
+            'nik' => '3201234567890001',
+            'nama' => 'Ahmad Fauzi',
+            'tempat' => 'Bandung',
+            'tgl_lahir' => '1990-01-15',
+            'jenis_kelamin' => 'Laki-laki',
+            'pekerjaan' => 'Petani',
             'agama' => 'Islam',
-            'alamat' => 'Jl. Kebon Jeruk No. 10'
+            'jalan' => 'Jl. Sukamaju No. 10',
+            'rt' => '02',
+            'rw' => '04',
+            'desa' => 'Sukamaju',
+            'dusun' => 'Dusun I',
+            'kecamatan' => 'Ciparay',
+            'no_kk' => '3201234567890001',
+            'kota' => 'Bandung',
+            'pend_terakhir' => 'SMA',
+            'pend_ditempuh' => 'SMA',
+            'status_perkawinan' => 'Kawin',
+            'status_dalam_keluarga' => 'Kepala Keluarga',
+            'kewarganegaraan' => 'WNI',
+            'nama_ayah' => 'Budi Santoso',
+            'nama_ibu' => 'Siti Aminah',
         ]);
+        User::create([
+            'username' => 'admin',
+            'password' => bcrypt('1234')
+        ]);
+        $pegawaiData = [
+            [
+                'nama' => 'HADI AFRIANSYAH, S.T',
+                'jabatan' => 'PJ.Kepala Desa',
+                'nip' => '19780422 200903 1 001',
+            ],
+            [
+                'nama' => 'MUKHLIS',
+                'jabatan' => 'Sekretaris Desa',
+                'nip' => null,
+            ],
+            [
+                'nama' => 'WIRA SRI MULYANI',
+                'jabatan' => 'KAUR KEUANGAN',
+                'nip' => null,
+            ],
+            [
+                'nama' => 'BOBBY AVANDA PUTRA',
+                'jabatan' => 'KAUR UMUM DAN PERENCANAAN',
+                'nip' => null,
+            ],
+            [
+                'nama' => null,
+                'jabatan' => 'KASI PEMERINTAHAN',
+                'nip' => null,
+            ],
+            [
+                'nama' => 'MAHILA',
+                'jabatan' => 'KASI PELAYAN DAN KESEJAHTERAAN',
+                'nip' => null,
+            ],
+            [
+                'nama' => 'ANI RAMAYANI',
+                'jabatan' => 'STAFF PENATA ASET',
+                'nip' => null,
+            ],
+            [
+                'nama' => 'CHAIRUL ANAM',
+                'jabatan' => 'KADUS GUNTUR',
+                'nip' => null,
+            ],
+            [
+                'nama' => 'YUDI',
+                'jabatan' => 'KADUS',
+                'nip' => null,
+            ],
+            [
+                'nama' => 'KHAERUDIN',
+                'jabatan' => 'KADUS',
+                'nip' => null,
+            ],
+        ];
+
+        // foreach ($pegawaiData as $data) {
+        //     Pegawai::create($data);
+        // }
     }
 }

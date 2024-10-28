@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SuratController;
 
@@ -38,7 +39,8 @@ Route::get('/suratketerangan', function () {
 Route::get('/loginadmin', function () {
     return view('login');
 });
-
+Route::post('/adminlogin', [AuthController::class, 'masuk']);
+Route::post('/logout', [AuthController::class, 'keluar']);
 Route::get('/Dashboard', function () {
     return view('Dashboard Admin.index');
 });
@@ -46,7 +48,9 @@ Route::get('/Dashboard', function () {
 Route::get('/DataPenduduk', function () {
     return view('Dashboard Admin.Datapenduduk');
 });
-
+Route::get('/coba', function () {
+    return view('surats.text');
+});
 Route::get('/PermintaanSurat', function () {
     return view('Dashboard Admin.PermintaanSurat');
 });
