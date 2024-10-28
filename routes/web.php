@@ -32,6 +32,9 @@ Route::post('/konfirmasi-surat', [SuratController::class, 'konfirmasiSurat']);
 Route::get('/isisurat', function () {
     return view('enduser.isisurat');
 });
+Route::get('/suratketerangan', function () {
+    return view('surats.suratketerangan');
+});
 Route::get('/loginadmin', function () {
     return view('login');
 });

@@ -20,6 +20,7 @@ class SuratController extends Controller
         // Jika `nik` ditemukan, redirect ke halaman lain dengan session
         if ($penduduk) {
             // Set session untuk izin akses halaman berikutnya
+            
             return redirect("/isisurat")->with('penduduk', $penduduk);
         }
     
