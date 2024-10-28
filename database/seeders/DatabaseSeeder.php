@@ -14,9 +14,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
-
-
         Penduduk::create([
             'nik' => '3201234567890001',
             'nama' => 'Ahmad Fauzi',
