@@ -40,9 +40,10 @@ Route::get('/suket-kelakuan-baik', function () {
 Route::get('/suratizinkeramain', function () {
     return view('surats.suratizinkeramain');
 });
-Route::get('/suketusaha', function () {
-    return view('surats.suketusaha');
+Route::get('/suket-usaha', function () {
+    return view('surats.suket-usaha');
 });
+Route::post('/suket-usaha', [SuratController::class, 'submitSuketUsaha']);
 Route::get('/suketbedanama', function () {
     return view('surats.suketbedanama');
 });

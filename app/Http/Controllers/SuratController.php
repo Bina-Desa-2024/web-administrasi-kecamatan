@@ -21,7 +21,7 @@ class SuratController extends Controller
         if ($penduduk) {
             // Set session untuk izin akses halaman berikutnya
             if ($request->input('jenis_surat') == 'a') {
-                return redirect("/suketkelakuanbaik")->with('penduduk', $penduduk);
+                return redirect("/suket-kelakuan-baik")->with('penduduk', $penduduk);
             } else {
                 return redirect('/'); // Tambahkan 'return' di sini
             }
@@ -29,5 +29,8 @@ class SuratController extends Controller
 
         // Jika `nik` tidak ditemukan, kembali dengan pesan error
         return back()->withErrors(['nik' => 'NIK tidak ditemukan di database.']);
+    }
+    public function submitSuketUsaha(Request $request){
+
     }
 }

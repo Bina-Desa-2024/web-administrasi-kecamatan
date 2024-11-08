@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('suketkelakuanbaiks', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->string("nik");
             $table->string("nama");
             $table->string("tempat");
@@ -31,8 +30,9 @@ return new class extends Migration
             $table->string("kota");
             $table->string("status_perkawinan");
             $table->string("kewarganegaraan");
-            $table->string("status_surat");
+            $table->string("status_surat")->default('pending');
             $table->text("keterangan");
+            $table->timestamps();
         });
     }
 

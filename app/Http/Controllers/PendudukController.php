@@ -3,8 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Penduduk;
-use App\Http\Requests\StorePendudukRequest;
-use App\Http\Requests\UpdatePendudukRequest;
+use Illuminate\Http\Request;
 
 class PendudukController extends Controller
 {
@@ -27,7 +26,7 @@ class PendudukController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StorePendudukRequest $request)
+    public function store(Request $request)
     {
         //
     }
@@ -51,7 +50,7 @@ class PendudukController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatePendudukRequest $request, Penduduk $penduduk)
+    public function update(Request $request, Penduduk $penduduk)
     {
         //
     }

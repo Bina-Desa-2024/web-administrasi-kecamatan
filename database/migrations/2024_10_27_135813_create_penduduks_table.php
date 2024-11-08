@@ -28,11 +28,11 @@ return new class extends Migration
             $table->string("kecamatan");
             $table->string("no_kk");
             $table->string("kota");
+            $table->string("status_perkawinan");
+            $table->string("kewarganegaraan");
             $table->string("pend_terakhir");
             $table->string("pend_ditempuh");
-            $table->string("status_perkawinan");
             $table->string("status_dalam_keluarga");
-            $table->string("kewarganegaraan");
             $table->string("nama_ayah");
             $table->string("nama_ibu");
             $table->timestamps();
