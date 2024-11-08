@@ -3,7 +3,8 @@
     <div class="container py-5" style="min-height: 100vh;">
         <div class="row justify-content-center">
             <div class="col-lg-10">
-                <form action="" class="card shadow border-0">
+                <form action="/suket-usaha" method="POST" class="card shadow border-0">
+                    @csrf
                     <!-- Header Card -->
                     <div class="card-header bg-success text-white text-center py-3">
                         <h4 class="mb-0"><i class="fas fa-envelope me-2"></i> Informasi Usaha</h4>
@@ -20,7 +21,7 @@
                                 <div class="mb-3">
                                     <label class="form-label fw-semibold">Nama Lengkap</label>
                                     <input type="text" name="nama" class="form-control"
-                                        placeholder="Masukkan Nama Lengkap" disabled
+                                        placeholder="Masukkan Nama Lengkap" readonly
                                         value="{{ session('penduduk') ? session('penduduk')->nama : '' }}">
                                 </div>
                                 <div class="mb-3">
@@ -28,13 +29,13 @@
                                     <input type="text" name="tempat" value="{{ session('penduduk') ? session('penduduk')->tempat : '' }}" hidden>
                                     <input type="text" name="tgl_lahir" value="{{ session('penduduk') ? session('penduduk')->tgl_lahir : '' }}" hidden>
                                     <input type="text" class="form-control"
-                                        placeholder="Masukkan Tempat, Tgl Lahir" required disabled
+                                        placeholder="Masukkan Tempat, Tgl Lahir" required readonly
                                         value="{{ session('penduduk') ? session('penduduk')->tempat . ', ' . \Carbon\Carbon::parse(session('penduduk')->tgl_lahir)->translatedFormat('d F Y') : '' }}">
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label fw-semibold">Pekerjaan</label>
                                     <input type="text" name="pekerjaan" class="form-control" value="{{ session('penduduk') ? session('penduduk')->pekerjaan : '' }}"
-                                        placeholder="Masukkan Pekerjaan" required disabled>
+                                        placeholder="Masukkan Pekerjaan" required readonly>
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label fw-semibold">Alamat</label>
@@ -42,8 +43,8 @@
                                     <input type="text" name="rt" value="{{ session('penduduk') ? session('penduduk')->rt : '' }}" hidden>
                                     <input type="text" name="rw" value="{{ session('penduduk') ? session('penduduk')->rw : '' }}" hidden>
                                     <input type="text" class="form-control"
-                                        placeholder="Masukkan Tempat, Tgl Lahir" required disabled
-                                        value="{{ session('penduduk') ? session('penduduk')->dusun . ' ' . session('penduduk')->rt . ' ' . session('penduduk')->rw}}">
+                                        placeholder="Masukkan Tempat, Tgl Lahir" required readonly
+                                        value="{{ session('penduduk') ? session('penduduk')->dusun . ' ' . session('penduduk')->rt . ' ' . session('penduduk')->rw : ''}}">
                                 </div>
                             </div>
 
@@ -52,17 +53,17 @@
                                 <div class="mb-3">
                                     <label class="form-label fw-semibold">Desa/Kel</label>
                                     <input type="text" name="desa" class="form-control"
-                                        placeholder="Masukkan Desa/Kel" required disabled value="{{ session('penduduk') ? session('penduduk')->desa : '' }}">
+                                        placeholder="Masukkan Desa/Kel" required readonly value="{{ session('penduduk') ? session('penduduk')->desa : '' }}">
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label fw-semibold">Kecamatan</label>
                                     <input type="text" name="kecamatan" class="form-control"
-                                        placeholder="Masukkan Kecamatan" required disabled value="{{ session('penduduk') ? session('penduduk')->kecamatan : '' }}">
+                                        placeholder="Masukkan Kecamatan" required readonly value="{{ session('penduduk') ? session('penduduk')->kecamatan : '' }}">
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label fw-semibold">Kabupaten/Kota</label>
                                     <input type="text" name="kota" class="form-control"
-                                        placeholder="Masukkan Kabupaten/Kota" required disabled value="{{ session('penduduk') ? session('penduduk')->kota : '' }}">
+                                        placeholder="Masukkan Kabupaten/Kota" required readonly value="{{ session('penduduk') ? session('penduduk')->kota : '' }}">
                                 </div>
                             </div>
                         </div>
@@ -125,7 +126,7 @@
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label fw-semibold">Mulai Usaha Sejak</label>
-                                    <input type="text" name="mulai_usaha" class="form-control"
+                                    <input type="date" name="mulai_usaha" class="form-control"
                                         placeholder="Masukkan Tahun Mulai Usaha" required>
                                 </div>
                             </div>
@@ -134,8 +135,8 @@
 
                     <!-- Footer Card (Action Buttons) -->
                     <div class="card-footer bg-light text-center py-3">
-                        <button type="reset" class="btn btn-warning me-2">Batal</button>
-                        <button type="submit" name="submit" class="btn btn-success">Submit</button>
+                        <a href="/buatsurat" class="btn btn-warning me-2">Batal</a>
+                        <button type="submit" class="btn btn-success">Submit</button>
                     </div>
                 </form>
             </div>

@@ -3,6 +3,8 @@
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SuratController;
+use App\Models\Penduduk;
+use App\Models\Suketusaha;
 
 /*
 |--------------------------------------------------------------------------
@@ -75,17 +77,24 @@ Route::get('/loginadmin', function () {
 Route::post('/adminlogin', [AuthController::class, 'masuk']);
 Route::post('/logout', [AuthController::class, 'keluar']);
 Route::get('/Dashboard', function () {
-    return view('Dashboard Admin.index');
+    $pendudukCount = Penduduk::count();
+    $suketusahaPendingCount = Suketusaha::where('status_surat', 'pending')->count();
+    $suketusahaCompletedCount = Suketusaha::where('status_surat', 'completed')->count();
+    return view('Dashboard Admin.index', compact('pendudukCount', 'suketusahaCompletedCount', 'suketusahaPendingCount'));
 });
 
 Route::get('/DataPenduduk', function () {
-    return view('Dashboard Admin.Datapenduduk');
+    return view('Dashboard Admin.Datapenduduk', [
+        'penduduks' => Penduduk::all()
+    ]);
 });
 Route::get('/coba', function () {
     return view('surats.text');
 });
 Route::get('/PermintaanSurat', function () {
-    return view('Dashboard Admin.PermintaanSurat');
+    return view('Dashboard Admin.PermintaanSurat', [
+        'suratPending' => Suketusaha::where('status_surat','pending')->get()
+    ]);
 });
 
 Route::get('/SuratSelesai', function () {
