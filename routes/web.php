@@ -34,8 +34,8 @@ Route::get('/isisurat', function () {
     return view('enduser.isisurat');
 });
 // surat-surat
-Route::get('/suketkelakuanbaik', function () {
-    return view('surats.suketkelakuanbaik');
+Route::get('/suket-kelakuan-baik', function () {
+    return view('surats.suket-kelakuan-baik');
 });
 Route::get('/suratizinkeramain', function () {
     return view('surats.suratizinkeramain');
