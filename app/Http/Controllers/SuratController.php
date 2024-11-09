@@ -57,9 +57,23 @@ class SuratController extends Controller
             'tenaga_kerja' => 'required',
             'mulai_usaha' => 'required',
         ]);
-
         Suketusaha::create($validatedData);
-
-        return redirect('/')->with('success', 'Data berhasil disimpan!');
+        return redirect('/')->with('success', 'Surat berhasil direquest, silahkan datang ke desa setelah 2/3 hari kerja untuk mengambil surat tersebut');
     }
+    public function konfirmasiSuketUsaha(Suketusaha $suketusaha){
+        // dd($suketusaha);
+        return view('/Dashboard Admin/surats/konfirmasi-suket-usaha', [
+            'suketusaha' => $suketusaha
+        ]);
+    }
+
+    public function suratSelesaiSuketUsaha(Request $request, Suketusaha $suketusaha){
+        // dd($request);
+        $validatedData = $request->validate([
+            'status_surat'=>'required'
+        ]);
+        Suketusaha::where('id',$suketusaha->id)->update($validatedData);
+        return redirect('/SuratSelesai')->with('success', 'Surat berhasil direquest, silahkan datang ke desa setelah 2/3 hari kerja untuk mengambil surat tersebut');
+    }
+
 }

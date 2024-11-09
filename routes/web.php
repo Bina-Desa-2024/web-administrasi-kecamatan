@@ -96,7 +96,8 @@ Route::get('/PermintaanSurat', function () {
         'suratPending' => Suketusaha::where('status_surat','pending')->get()
     ]);
 });
-
+Route::get('/konfirmasi-suket-usaha/{suketusaha}', [SuratController::class, 'konfirmasiSuketUsaha']);
+Route::put('/selesai-suket-usaha/{suketusaha}', [SuratController::class, 'suratSelesaiSuketUsaha']);
 Route::get('/SuratSelesai', function () {
     return view('Dashboard Admin.SuratSelesai');
 });

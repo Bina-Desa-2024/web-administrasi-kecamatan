@@ -26,7 +26,7 @@
                     <td>suket usaha</td>
                     <td><label class="badge badge-warning">In progress</label></td>
                     <td>
-                        <button type="button" class="btn btn-outline-success btn-icon-text"><i class="ti-file btn-icon-prepend"></i> Konfirmasi </button>
+                        <a href="/konfirmasi-suket-usaha/{{ $item->id }}" class="btn btn-outline-success btn-icon-text"><i class="ti-file btn-icon-prepend"></i> Konfirmasi </a>
                     </td>
                 </tr>
                 @endforeach
