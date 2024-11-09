@@ -114,12 +114,23 @@ Route::get('/PermintaanSurat', function () {
             $model::where('status_surat', 'pending')->get()
         );
     }
-    return view('Dashboard Admin.PermintaanSurat',  compact('suratPending'));
+    return view('Dashboard Admin.PermintaanSurat', compact('suratPending'));
 });
 Route::get('/konfirmasi-surat/{id}/{jenis_surat}', [SuratController::class, 'konfirmasiSurat']);
 Route::put('/selesai-suket-usaha/{suketusaha}', [SuratController::class, 'suratSelesaiSuketUsaha']);
 Route::get('/SuratSelesai', function () {
-    return view('Dashboard Admin.SuratSelesai');
+    $models = [
+        Suketusaha::class,
+        Sukettidakmampu::class,
+        Suketkelakuanbaik::class,
+    ];
+    $suratCompleted = collect();
+    foreach ($models as $model) {
+        $suratCompleted = $suratCompleted->concat(
+            $model::where('status_surat', 'completed')->get()
+        );
+    }
+    return view('Dashboard Admin.SuratSelesai', compact('suratCompleted'));
 });
 
 Route::get('/TambahData', function () {
