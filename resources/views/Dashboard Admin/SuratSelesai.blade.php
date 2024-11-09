@@ -28,7 +28,7 @@
                     <td>{{ $item->jenis_surat }}</td>
                     <td><label class="badge badge-success">Completed</label></td>
                     <td>
-                        <button type="button" class="btn btn-outline-info btn-icon-text"> Print <i class="ti-printer btn-icon-append"></i></button>
+                        <a href="/cetak-surat/{{ $item->id }}/{{ $item->jenis_surat }}" class="btn btn-outline-info btn-icon-text"> Print <i class="ti-printer btn-icon-append"></i></a>
                     </td>
                 </tr>
                 @endforeach

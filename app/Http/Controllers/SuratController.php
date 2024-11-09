@@ -60,14 +60,14 @@ class SuratController extends Controller
         Suketusaha::create($validatedData);
         return redirect('/')->with('success', 'Surat berhasil direquest, silahkan datang ke desa setelah 2/3 hari kerja untuk mengambil surat tersebut');
     }
-    public function konfirmasiSurat($id, $jenis_surat){
+    public function konfirmasiPermintaanSurat($id, $jenis_surat){
         // dd($jenis_surat);
         switch ($jenis_surat) {
             case 'suket_usaha':
                 $suketusaha = Suketusaha::find($id);
-                return view('/Dashboard Admin/surats/konfirmasi-suket-usaha', compact('suketusaha'));
+                return view('/Dashboard Admin/permintaan-surat/permintaan-suket-usaha', compact('suketusaha'));
             case 'surat_kelakuan_baik':
-                return view('/Dashboard Admin/surats/konfirmasi-suket-domisili', compact('suketdomisili'));
+                return view('/Dashboard Admin/permintaan-surat/permintaan-suket-domisili', compact('suketdomisili'));
             case 'suket_tidak_mampu':
                 return 0;
             default:
@@ -75,13 +75,38 @@ class SuratController extends Controller
         }
     }
 
-    public function suratSelesaiSuketUsaha(Request $request, Suketusaha $suketusaha){
+    public function suratSelesai(Request $request){
         // dd($request);
-        $validatedData = $request->validate([
-            'status_surat'=>'required'
-        ]);
-        Suketusaha::where('id',$suketusaha->id)->update($validatedData);
-        return redirect('/SuratSelesai')->with('success', 'Surat berhasil direquest, silahkan datang ke desa setelah 2/3 hari kerja untuk mengambil surat tersebut');
+        $jenis_surat = $request->jenis_surat;
+        $id = $request->id;
+        switch ($jenis_surat) {
+            case 'suket_usaha':
+                $validatedData = $request->validate([
+                    'status_surat'=>'required'
+                ]);
+                Suketusaha::where('id',$id)->update($validatedData);
+                return redirect('/SuratSelesai');
+            case 'surat_kelakuan_baik':
+                return view('/Dashboard Admin/permintaan-surat/permintaan-suket-domisili', compact('suketdomisili'));
+            case 'suket_tidak_mampu':
+                return 0;
+            default:
+                abort(404, 'Jenis surat tidak ditemukan');
+        }
+    }
+
+    public function cetakSurat($id, $jenis_surat){
+        switch ($jenis_surat) {
+            case 'suket_usaha':
+                $suketusaha = Suketusaha::find($id);
+                return view('/Dashboard Admin/cetak-surat/cetak-suket-usaha', compact('suketusaha'));
+            case 'surat_kelakuan_baik':
+                return view('/Dashboard Admin/permintaan-surat/permintaan-suket-domisili', compact('suketdomisili'));
+            case 'suket_tidak_mampu':
+                return 0;
+            default:
+                abort(404, 'Jenis surat tidak ditemukan');
+        }
     }
 
 }

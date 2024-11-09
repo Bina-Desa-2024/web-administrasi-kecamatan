@@ -3,7 +3,7 @@
     <div class="container py-5" style="min-height: 100vh;">
         <div class="row justify-content-center">
             <div class="col-lg-10">
-                <form action="/selesai-suket-usaha/{{ $suketusaha->id }}" method="POST" class="card shadow border-0">
+                <form action="/selesai-surat" method="POST" class="card shadow border-0">
                     @method('put')
                     @csrf
                     <!-- Header Card -->
@@ -147,6 +147,8 @@
                         </div>
                     </div>
                     <input type="text" name="status_surat" value="completed" hidden>
+                    <input type="text" name="jenis_surat" value="{{ $suketusaha->jenis_surat }}" hidden>
+                    <input type="text" name="id" value="{{ $suketusaha->id }}" hidden>
                     <!-- Footer Card (Action Buttons) -->
                     <div class="card-footer bg-light text-center py-3">
                         <a href="/buatsurat" class="btn btn-warning me-2">Batal</a>

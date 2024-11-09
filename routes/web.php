@@ -116,8 +116,8 @@ Route::get('/PermintaanSurat', function () {
     }
     return view('Dashboard Admin.PermintaanSurat', compact('suratPending'));
 });
-Route::get('/konfirmasi-surat/{id}/{jenis_surat}', [SuratController::class, 'konfirmasiSurat']);
-Route::put('/selesai-suket-usaha/{suketusaha}', [SuratController::class, 'suratSelesaiSuketUsaha']);
+Route::get('/konfirmasi-surat/{id}/{jenis_surat}', [SuratController::class, 'konfirmasiPermintaanSurat']);
+Route::put('/selesai-surat', [SuratController::class, 'suratSelesai']);
 Route::get('/SuratSelesai', function () {
     $models = [
         Suketusaha::class,
@@ -132,7 +132,7 @@ Route::get('/SuratSelesai', function () {
     }
     return view('Dashboard Admin.SuratSelesai', compact('suratCompleted'));
 });
-
+Route::get('/cetak-surat/{id}/{jenis_surat}', [SuratController::class, 'cetakSurat']);
 Route::get('/TambahData', function () {
     return view('Dashboard Admin.TambahData');
 });
