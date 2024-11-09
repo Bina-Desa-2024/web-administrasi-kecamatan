@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('suketusahas', function (Blueprint $table) {
             $table->id();
+            $table->string("jenis_surat")->default('suket_usaha');
             $table->string("nama");
             $table->string("tempat");
             $table->date("tgl_lahir");

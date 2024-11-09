@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SuratController;
 use App\Models\Penduduk;
 use App\Models\Suketusaha;
+use App\Models\Suketkelakuanbaik;
+use App\Models\Sukettidakmampu;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,9 +31,9 @@ Route::get('/tentang', function () {
     return view('enduser.tentang');
 });
 Route::get('/buat-surat/{jenis}', function ($jenis) {
-    return view('enduser.konfirmasisurat', ['jenis_surat'=> $jenis]);
+    return view('enduser.konfirmasinik', ['jenis_surat'=> $jenis]);
 });
-Route::post('/konfirmasi-surat', [SuratController::class, 'konfirmasiSurat']);
+Route::post('/konfirmasi-nik', [SuratController::class, 'konfirmasiNik']);
 Route::get('/isisurat', function () {
     return view('enduser.isisurat');
 });
@@ -77,10 +79,19 @@ Route::get('/loginadmin', function () {
 Route::post('/adminlogin', [AuthController::class, 'masuk']);
 Route::post('/logout', [AuthController::class, 'keluar']);
 Route::get('/Dashboard', function () {
+    $models = [
+        Suketusaha::class,
+        Sukettidakmampu::class,
+        Suketkelakuanbaik::class
+    ];
+    $completedCount = 0;
+    $pendingCount = 0;
+    foreach ($models as $model) {
+        $completedCount += $model::where('status_surat', 'completed')->count();
+        $pendingCount += $model::where('status_surat', 'pending')->count();
+    }
     $pendudukCount = Penduduk::count();
-    $suketusahaPendingCount = Suketusaha::where('status_surat', 'pending')->count();
-    $suketusahaCompletedCount = Suketusaha::where('status_surat', 'completed')->count();
-    return view('Dashboard Admin.index', compact('pendudukCount', 'suketusahaCompletedCount', 'suketusahaPendingCount'));
+    return view('Dashboard Admin.index', compact('pendudukCount', 'completedCount', 'pendingCount'));
 });
 
 Route::get('/DataPenduduk', function () {
@@ -92,11 +103,20 @@ Route::get('/coba', function () {
     return view('surats.text');
 });
 Route::get('/PermintaanSurat', function () {
-    return view('Dashboard Admin.PermintaanSurat', [
-        'suratPending' => Suketusaha::where('status_surat','pending')->get()
-    ]);
+    $models = [
+        Suketusaha::class,
+        Sukettidakmampu::class,
+        Suketkelakuanbaik::class,
+    ];
+    $suratPending = collect();
+    foreach ($models as $model) {
+        $suratPending = $suratPending->concat(
+            $model::where('status_surat', 'pending')->get()
+        );
+    }
+    return view('Dashboard Admin.PermintaanSurat',  compact('suratPending'));
 });
-Route::get('/konfirmasi-suket-usaha/{suketusaha}', [SuratController::class, 'konfirmasiSuketUsaha']);
+Route::get('/konfirmasi-surat/{id}/{jenis_surat}', [SuratController::class, 'konfirmasiSurat']);
 Route::put('/selesai-suket-usaha/{suketusaha}', [SuratController::class, 'suratSelesaiSuketUsaha']);
 Route::get('/SuratSelesai', function () {
     return view('Dashboard Admin.SuratSelesai');

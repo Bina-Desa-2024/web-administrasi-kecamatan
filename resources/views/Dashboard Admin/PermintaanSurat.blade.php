@@ -10,7 +10,7 @@
             <thead>
               <tr>
                 <th>No</th>
-                <th>Tanggal</th>
+                <th>Tanggal Diminta</th>
                 <th>Nama</th>
                 <th>Jenis Surat</th>
                 <th>Status</th>
@@ -23,10 +23,10 @@
                     <td>{{ $loop->iteration}}</td>
                     <td>{{ $item->created_at }}</td>
                     <td>{{ $item->nama }}</td>
-                    <td>suket usaha</td>
+                    <td>{{ $item->jenis_surat }}</td>
                     <td><label class="badge badge-warning">In progress</label></td>
                     <td>
-                        <a href="/konfirmasi-suket-usaha/{{ $item->id }}" class="btn btn-outline-success btn-icon-text"><i class="ti-file btn-icon-prepend"></i> Konfirmasi </a>
+                        <a href="/konfirmasi-surat/{{ $item->id }}/{{ $item->jenis_surat }}" class="btn btn-outline-success btn-icon-text"><i class="ti-file btn-icon-prepend"></i> Konfirmasi </a>
                     </td>
                 </tr>
                 @endforeach

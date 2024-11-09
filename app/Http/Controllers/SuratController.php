@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class SuratController extends Controller
 {
-    public function konfirmasiSurat(Request $request)
+    public function konfirmasiNik(Request $request)
     {
         $request->validate([
             'nik' => 'required',
@@ -60,11 +60,19 @@ class SuratController extends Controller
         Suketusaha::create($validatedData);
         return redirect('/')->with('success', 'Surat berhasil direquest, silahkan datang ke desa setelah 2/3 hari kerja untuk mengambil surat tersebut');
     }
-    public function konfirmasiSuketUsaha(Suketusaha $suketusaha){
-        // dd($suketusaha);
-        return view('/Dashboard Admin/surats/konfirmasi-suket-usaha', [
-            'suketusaha' => $suketusaha
-        ]);
+    public function konfirmasiSurat($id, $jenis_surat){
+        // dd($jenis_surat);
+        switch ($jenis_surat) {
+            case 'suket_usaha':
+                $suketusaha = Suketusaha::find($id);
+                return view('/Dashboard Admin/surats/konfirmasi-suket-usaha', compact('suketusaha'));
+            case 'surat_kelakuan_baik':
+                return view('/Dashboard Admin/surats/konfirmasi-suket-domisili', compact('suketdomisili'));
+            case 'suket_tidak_mampu':
+                return 0;
+            default:
+                abort(404, 'Jenis surat tidak ditemukan');
+        }
     }
 
     public function suratSelesaiSuketUsaha(Request $request, Suketusaha $suketusaha){

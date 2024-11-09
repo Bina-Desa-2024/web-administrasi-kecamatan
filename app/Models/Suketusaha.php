@@ -31,6 +31,6 @@ class Suketusaha extends Model
         'modal_usaha',
         'tenaga_kerja',
         'mulai_usaha',
-        'status_surat', 
+        'status_surat',
     ];
 }
