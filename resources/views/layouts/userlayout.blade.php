@@ -117,7 +117,7 @@
     </main>
 
     <footer class="footer">
-        <p class="text-muted mb-0">goChange © 2024 . All Rights Reserved.</p>
+        <p class="text-muted mb-0">eSurat © 2024 . All Rights Reserved.</p>
 
     </footer>
 

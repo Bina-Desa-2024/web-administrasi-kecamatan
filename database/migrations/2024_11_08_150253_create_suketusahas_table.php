@@ -11,28 +11,31 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('suketkelakuanbaiks', function (Blueprint $table) {
+        Schema::create('suketusahas', function (Blueprint $table) {
             $table->id();
-            $table->string("jenis_surat")->default('surat_kelakuan_baik');
-            $table->string("nik");
+            $table->string("jenis_surat")->default('suket_usaha');
             $table->string("nama");
             $table->string("tempat");
             $table->date("tgl_lahir");
-            $table->string("jenis_kelamin");
             $table->string("pekerjaan");
-            $table->string("agama");
-            $table->string("jalan");
             $table->string("rt");
             $table->string("rw");
             $table->string("desa");
             $table->string("dusun");
             $table->string("kecamatan");
-            $table->string("no_kk");
             $table->string("kota");
-            $table->string("status_perkawinan");
-            $table->string("kewarganegaraan");
+            $table->string("nama_usaha");
+            $table->string("alamat_usaha");
+            $table->string("desa_usaha");
+            $table->string("kecamatan_usaha");
+            $table->string("bidang_usaha");
+            $table->string("jenis_tempat");
+            $table->string("status_tempat");
+            $table->string("bentuk_usaha");
+            $table->string("modal_usaha");
+            $table->string("tenaga_kerja");
+            $table->date("mulai_usaha");
             $table->string("status_surat")->default('pending');
-            $table->text("keterangan");
             $table->timestamps();
         });
     }
@@ -42,6 +45,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('suketkelakuanbaiks');
+        Schema::dropIfExists('suketusahas');
     }
 };
