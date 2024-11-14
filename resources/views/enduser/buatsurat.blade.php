@@ -1,31 +1,28 @@
 @extends('layouts.userlayout')
-@section('child')
-<div class="container">
-    <h3 class="mt-5 text-center text-success">Pilih Surat yang Ingin Anda Buat</h3>
-    <p class="text-center text-muted mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque laboriosam maxime animi minus atque, suscipit quaerat tempora cupiditate nostrum asperiores. Ipsa, facilis. Fugiat nobis deserunt consequatur pariatur recusandae quos sequi.</p>
 
+@section('child')
+<div class="container py-5">
+    <!-- Heading Section -->
+    <h3 class="text-center text-success mb-4">Pilih Surat yang Ingin Anda Buat</h3>
+    <p class="text-center text-muted mb-5">Pilih jenis surat yang sesuai dengan kebutuhan Anda. Anda bisa membuat berbagai jenis surat di sini dengan mudah.</p>
+
+    <!-- Surat Cards Section -->
     <div class="container-fluid">
-        <div class="container-custom">
-            <div class="row mt-4 justify-content-center">
-                @for ($i = 1; $i <= 20; $i++)
-                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4 d-flex">
-                        <div class="card align-items-center d-flex flex-column border-0 shadow-lg w-100">
-                            <div class="card-body text-center d-flex flex-column p-3">
-                                <div class="d-flex justify-content-center align-items-center mb-3">
-                                    <i class="fa-solid fa-envelope fs-1 text-success"></i>
-                                </div>
-                                <h5 class="card-title font-weight-bold mb-2">Surat {{ strtolower(chr(96 + $i)) }}</h5> <!-- Generate a-z for card titles -->
-                                <p class="small text-muted">Deskripsi singkat surat {{ strtolower(chr(96 + $i)) }}.</p>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+            @for ($i = 1; $i <= 8; $i++)
+                <div class="col">
+                    <div class="card shadow-lg border-0 rounded-lg h-100">
+                        <div class="card-body d-flex flex-column align-items-center text-center p-4">
+                            <div class="icon-container mb-3">
+                                <i class="fa-solid fa-envelope fs-2 text-success"></i>
                             </div>
-                            <a href="{{ url('/buat-surat/' . strtolower(chr(96 + $i))) }}" class="btn btn-success w-75 mb-4">Buat Surat</a> <!-- URL with {jenis} parameter -->
+                            <h5 class="card-title font-weight-bold text-dark mb-3">Surat {{ strtolower(chr(96 + $i)) }}</h5>
+                            {{-- <p class="card-text text-muted mb-3">Pilih untuk membuat surat jenis ini dengan mudah.</p> --}}
+                            <a href="{{ url('/buat-surat/' . strtolower(chr(96 + $i))) }}" class="btn btn-success w-100">Buat Surat</a>
                         </div>
                     </div>
-
-                    @if ($i % 4 == 0)
-                        </div><div class="row mt-4 justify-content-center"> <!-- Start a new row after every 4 cards -->
-                    @endif
-                @endfor
-            </div>
+                </div>
+            @endfor
         </div>
     </div>
 </div>
