@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SuratController;
 use App\Models\Penduduk;
+use App\Models\Daftarsurat;
 use App\Models\Suketusaha;
 use App\Models\Suketkelakuanbaik;
 use App\Models\Sukettidakmampu;
@@ -24,7 +25,8 @@ Route::get('/', function () {
 })->name('/');
 
 Route::get('/buatsurat', function () {
-    return view('enduser.buatsurat');
+    $daftar_surat= Daftarsurat::all();
+    return view('enduser.buatsurat', compact('daftar_surat'));
 });
 
 Route::get('/tentang', function () {
@@ -38,13 +40,18 @@ Route::get('/isisurat', function () {
     return view('enduser.isisurat');
 });
 // surat-surat
-Route::get('/suratizinkeramain', function () {
+Route::get('/surat-izin-keramaian', function () {
     return view('surats.suratizinkeramain');
 });
+Route::post('/surat-izin-keramaian', [SuratController::class, 'submitSurat']);
+Route::get('/suket-tidak-mampu', function () {
+    return view('surats.suket-tidak-mampu');
+});
+Route::post('/suket-tidak-mampu', [SuratController::class, 'submitSurat']);
 Route::get('/suket-usaha', function () {
     return view('surats.suket-usaha');
 });
-Route::post('/suket-usaha', [SuratController::class, 'submitSuketUsaha']);
+Route::post('/suket-usaha', [SuratController::class, 'submitSurat']);
 // login
 Route::get('/loginadmin', function () {
     return view('login');

@@ -9,20 +9,23 @@
     <!-- Surat Cards Section -->
     <div class="container-fluid">
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
-            @for ($i = 1; $i <= 8; $i++)
-                <div class="col">
-                    <div class="card shadow-lg border-0 rounded-lg h-100">
-                        <div class="card-body d-flex flex-column align-items-center text-center p-4">
-                            <div class="icon-container mb-3">
-                                <i class="fa-solid fa-envelope fs-2 text-success"></i>
-                            </div>
-                            <h5 class="card-title font-weight-bold text-dark mb-3">Surat {{ strtolower(chr(96 + $i)) }}</h5>
-                            {{-- <p class="card-text text-muted mb-3">Pilih untuk membuat surat jenis ini dengan mudah.</p> --}}
-                            <a href="{{ url('/buat-surat/' . strtolower(chr(96 + $i))) }}" class="btn btn-success w-100">Buat Surat</a>
+            @foreach ($daftar_surat as $surat)
+                
+            <div class="col">
+                <div class="card shadow-lg border-0 rounded-lg h-100">
+                    <div class="card-body d-flex flex-column align-items-center text-center p-4">
+                        <div class="icon-container mb-3">
+                            <i class="fa-solid fa-envelope fs-2 text-success"></i>
                         </div>
+                        <h5 class="card-title font-weight-bold text-dark mb-3">{{ $surat->nama_surat }}</h5>
+                        {{-- <p class="card-text text-muted mb-3">Pilih untuk membuat surat jenis ini dengan mudah.</p> --}}
+                        <a href="{{ url('/buat-surat/' . $surat->nama_surat) }}" class="btn btn-success w-100">Buat Surat</a>
                     </div>
                 </div>
-            @endfor
+            </div>
+            @endforeach
+            {{-- @for ($i = 1; $i <= 8; $i++)
+            @endfor --}}
         </div>
     </div>
 </div>

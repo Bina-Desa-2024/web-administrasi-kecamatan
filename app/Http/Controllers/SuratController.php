@@ -21,9 +21,15 @@ class SuratController extends Controller
         // Jika `nik` ditemukan, redirect ke halaman lain dengan session
         if ($penduduk) {
             // Set session untuk izin akses halaman berikutnya
-            if ($request->input('jenis_surat') == 'a') {
-                return redirect("/suket-usaha")->with('penduduk', $penduduk);
-            } else {
+            if ($request->input('jenis_surat') == 'Suret Keterangan Usaha') {
+                $jenis_surat = $request->input('jenis_surat');
+                return redirect("/suket-usaha")->with('penduduk', $penduduk)->with('jenis_surat',$jenis_surat);
+            } else if($request->input('jenis_surat') == 'Surat Keterangan Tidak Mampu'){
+                return redirect("/suket-tidak-mampu")->with('penduduk', $penduduk);
+            }else if($request->input('jenis_surat') == 'Surat Izin Keramaian'){
+                return redirect("/surat-izin-keramaian")->with('penduduk', $penduduk);
+            }
+            else {
                 return redirect('/'); // Tambahkan 'return' di sini
             }
         }
@@ -31,34 +37,65 @@ class SuratController extends Controller
         // Jika `nik` tidak ditemukan, kembali dengan pesan error
         return back()->withErrors(['nik' => 'NIK tidak ditemukan di database.']);
     }
-    public function submitSuketUsaha(Request $request)
+    public function submitSurat(Request $request)
     {
-        // dd($request);
-        $validatedData = $request->validate([
-            'nama' => 'required',
-            'tempat' => 'required',
-            'tgl_lahir' => 'required',
-            'pekerjaan' => 'required',
-            'rt' => 'required',
-            'rw' => 'required',
-            'desa' => 'required',
-            'dusun' => 'required',
-            'kecamatan' => 'required',
-            'kota' => 'required',
-            'nama_usaha' => 'required',
-            'alamat_usaha' => 'required',
-            'desa_usaha' => 'required',
-            'kecamatan_usaha' => 'required',
-            'bidang_usaha' => 'required',
-            'jenis_tempat' => 'required',
-            'status_tempat' => 'required',
-            'bentuk_usaha' => 'required',
-            'modal_usaha' => 'required',
-            'tenaga_kerja' => 'required',
-            'mulai_usaha' => 'required',
-        ]);
-        Suketusaha::create($validatedData);
-        return redirect('/')->with('success', 'Surat berhasil direquest, silahkan datang ke desa setelah 2/3 hari kerja untuk mengambil surat tersebut');
+        if ($request->input('jenis_surat') == 'Surat Keterangan Usaha') {
+            $validatedData = $request->validate([
+                'nama' => 'required',
+                'tempat' => 'required',
+                'tgl_lahir' => 'required',
+                'pekerjaan' => 'required',
+                'rt' => 'required',
+                'rw' => 'required',
+                'desa' => 'required',
+                'dusun' => 'required',
+                'kecamatan' => 'required',
+                'kota' => 'required',
+                'nama_usaha' => 'required',
+                'alamat_usaha' => 'required',
+                'desa_usaha' => 'required',
+                'kecamatan_usaha' => 'required',
+                'bidang_usaha' => 'required',
+                'jenis_tempat' => 'required',
+                'status_tempat' => 'required',
+                'bentuk_usaha' => 'required',
+                'modal_usaha' => 'required',
+                'tenaga_kerja' => 'required',
+                'mulai_usaha' => 'required',
+            ]);
+            Suketusaha::create($validatedData);
+            return redirect('/')->with('success', 'Surat berhasil direquest, silahkan datang ke desa setelah 2/3 hari kerja untuk mengambil surat tersebut');
+        } else if($request->input('jenis_surat') == 'Surat Keterangan Tidak Mampu'){
+            $validatedData = $request->validate([
+                'nama' => 'required',
+                'tempat' => 'required',
+                'tgl_lahir' => 'required',
+                'pekerjaan' => 'required',
+                'nik' => 'required',
+                'rt' => 'required',
+                'rw' => 'required',
+                'desa' => 'required',
+                'dusun' => 'required',
+                'kecamatan' => 'required',
+                'kota' => 'required',
+                'nama_tidak_mampu' => 'required',
+                'tempat_tidak_mampu' => 'required',
+                'tgl_lahir_tidak_mampu' => 'required',
+                'nik_tidak_mampu' => 'required',
+                'rt_tidak_mampu' => 'required',
+                'rw_tidak_mampu' => 'required',
+                'desa_tidak_mampu' => 'required',
+                'dusun_tidak_mampu' => 'required',
+                'kecamatan_tidak_mampu' => 'required',
+                'kota_tidak_mampu' => 'required',
+            ]);
+        }else if($request->input('jenis_surat') == 'Surat Izin Keramaian'){
+            dd($request);
+        }
+        else {
+            return redirect('/'); // Tambahkan 'return' di sini
+        }
+        
     }
     public function konfirmasiPermintaanSurat($id, $jenis_surat){
         // dd($jenis_surat);

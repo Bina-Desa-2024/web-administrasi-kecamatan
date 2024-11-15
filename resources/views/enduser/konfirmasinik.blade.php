@@ -12,7 +12,6 @@
             <input type="text" value="{{ $jenis_surat }}" name="jenis_surat" hidden>
             <input type="text" name="nik" class="form-control border border-success">
             <button type="submit" class="btn btn-success w-100 mt-4">Kirim Formulir</button>
-    
         </form>
     </div>
 </div>

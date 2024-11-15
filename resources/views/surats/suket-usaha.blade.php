@@ -132,7 +132,7 @@
                             </div>
                         </div>
                     </div>
-
+                    <input type="text" name="jenis_surat" value="{{ session('jenis_surat') }}" hidden>
                     <!-- Footer Card (Action Buttons) -->
                     <div class="card-footer bg-light text-center py-3">
                         <a href="/buatsurat" class="btn btn-warning me-2">Batal</a>

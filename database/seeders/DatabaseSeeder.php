@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Penduduk;
 use App\Models\User;
+use App\Models\Daftarsurat;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -42,6 +43,9 @@ class DatabaseSeeder extends Seeder
             'username' => 'admin',
             'password' => bcrypt('1234')
         ]);
+        Daftarsurat::create(['nama_surat' => 'Surat Keterangan Tidak Mampu']);
+        Daftarsurat::create(['nama_surat' => 'Suret Keterangan Usaha']);
+        Daftarsurat::create(['nama_surat' => 'Surat Izin Keramaian']);
         $pegawaiData = [
             [
                 'nama' => 'HADI AFRIANSYAH, S.T',
