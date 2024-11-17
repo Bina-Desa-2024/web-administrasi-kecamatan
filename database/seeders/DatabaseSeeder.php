@@ -44,7 +44,7 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('1234')
         ]);
         Daftarsurat::create(['nama_surat' => 'Surat Keterangan Tidak Mampu']);
-        Daftarsurat::create(['nama_surat' => 'Suret Keterangan Usaha']);
+        Daftarsurat::create(['nama_surat' => 'Surat Keterangan Usaha']);
         Daftarsurat::create(['nama_surat' => 'Surat Izin Keramaian']);
         $pegawaiData = [
             [

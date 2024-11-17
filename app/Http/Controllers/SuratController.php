@@ -16,14 +16,15 @@ class SuratController extends Controller
             'nik' => 'required',
         ]);
 
-        // Cari `nik` di tabel `penduduks`
         $nik = $request->input('nik');
+        // dd($nik);
         $penduduk = Penduduk::where('nik', $nik)->first();
-
+        // dd($penduduk);
+        
         // Jika `nik` ditemukan, redirect ke halaman lain dengan session
         if ($penduduk) {
             // Set session untuk izin akses halaman berikutnya
-            if ($request->input('jenis_surat') == 'Suret Keterangan Usaha') {
+            if ($request->input('jenis_surat') == 'Surat Keterangan Usaha') {
                 $jenis_surat = $request->input('jenis_surat');
                 return redirect("/suket-usaha")->with('penduduk', $penduduk)->with('jenis_surat',$jenis_surat);
             } else if($request->input('jenis_surat') == 'Surat Keterangan Tidak Mampu'){
@@ -39,9 +40,13 @@ class SuratController extends Controller
         // Jika `nik` tidak ditemukan, kembali dengan pesan error
         return back()->withErrors(['nik' => 'NIK tidak ditemukan di database.']);
     }
+
     public function submitSurat(Request $request)
     {
-        if ($request->input('jenis_surat') == 'Surat Keterangan Usaha') {
+        // dd($request);
+        $jenis_surat = $request->input('jenis_surat');
+        // dd($jenis_surat);
+        if ($jenis_surat == 'Surat Keterangan Usaha') {
             $validatedData = $request->validate([
                 'nama' => 'required',
                 'tempat' => 'required',
@@ -67,7 +72,7 @@ class SuratController extends Controller
             ]);
             Suketusaha::create($validatedData);
             return redirect('/')->with('success', 'Surat berhasil direquest, silahkan datang ke desa setelah 2/3 hari kerja untuk mengambil surat tersebut');
-        } else if($request->input('jenis_surat') == 'Surat Keterangan Tidak Mampu'){
+        } elseif($jenis_surat == 'Surat Keterangan Tidak Mampu'){
             $validatedData = $request->validate([
                 'nama' => 'required',
                 'tempat' => 'required',
@@ -93,7 +98,7 @@ class SuratController extends Controller
             ]);
             Sukettidakmampu::create($validatedData);
             return redirect('/')->with('success', 'Surat berhasil direquest, silahkan datang ke desa setelah 2/3 hari kerja untuk mengambil surat tersebut');
-        }else if($request->input('jenis_surat') == 'Surat Izin Keramaian'){
+        }elseif($jenis_surat == 'Surat Izin Keramaian'){
             $validatedData = $request->validate([
                 'nama' => 'required',
                 'nik' => 'required',
@@ -116,7 +121,7 @@ class SuratController extends Controller
             return redirect('/')->with('success', 'Surat berhasil direquest, silahkan datang ke desa setelah 2/3 hari kerja untuk mengambil surat tersebut');
         }
         else {
-            return redirect('/'); // Tambahkan 'return' di sini
+            return redirect('/')->with('error', 'Surat gagal masuk');
         }
         
     }
