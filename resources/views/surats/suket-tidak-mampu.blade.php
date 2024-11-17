@@ -6,7 +6,8 @@
     <div class="container py-5" style="min-height: 100vh;">
         <div class="row justify-content-center">
             <div class="col-lg-10">
-                <div class="card shadow border-0">
+                <form action="/suket-usaha" method="POST" class="card shadow border-0">
+                    @csrf
                     <!-- Body Card -->
                     <div class="card-body px-5">
                         <!-- Informasi Pribadi -->
@@ -42,12 +43,7 @@
                                 <label class="form-label fw-semibold">Alamat</label>
                                 <input type="text" class="form-control"
                                     placeholder="Masukkan Kecamatan" required
-                                    value="{{ session('penduduk') ? session('penduduk')->dusun . ' ' . 
-                                    session('penduduk')->rt . ' ' . 
-                                    session('penduduk')->rw . ' ' . 
-                                    session('penduduk')->desa . ' ' . 
-                                    session('penduduk')->kecamatan . ' ' . 
-                                    session('penduduk')->kabupaten : '' }}">
+                                    value="{{ session('penduduk') ? session('penduduk')->alamat : '' }}">
                             </div>
                         </div>
 
@@ -76,43 +72,18 @@
                                     placeholder="Masukkan Jenis Tempat Usaha" required>
                             </div>
                             <div class="col-md-6 mb-3">
-                                <label class="form-label fw-semibold">Status Tempat Usaha</label>
-                                <input type="text" name="fstatus_tempat" class="form-control"
-                                    placeholder="Masukkan Status Tempat Usaha" required>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label class="form-label fw-semibold">Bentuk Usaha</label>
-                                <input type="text" name="fbentuk_usaha" class="form-control"
-                                    placeholder="Masukkan Bentuk Usaha" required>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label class="form-label fw-semibold">Modal Usaha</label>
-                                <input type="text" name="fmodal_usaha" class="form-control"
-                                    placeholder="Masukkan Modal Usaha" required>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label class="form-label fw-semibold">Jumlah Tenaga Kerja</label>
-                                <input type="text" name="fjumlah_tenaga_kerja" class="form-control"
-                                    placeholder="Masukkan Jumlah Tenaga Kerja" required>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label class="form-label fw-semibold">Mulai Usaha Sejak</label>
-                                <input type="text" name="fmulai_usaha" class="form-control"
-                                    placeholder="Masukkan Tahun Mulai Usaha" required>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label class="form-label fw-semibold">Alamat Usaha</label>
-                                <textarea name="falamat_usaha" class="form-control" rows="2" placeholder="Masukkan Alamat Usaha" required></textarea>
+                                <label class="form-label fw-semibold">Alamat</label>
+                                <textarea name="alamat_tidak_mampu" class="form-control" rows="2" placeholder="Masukkan Alamat Usaha" required></textarea>
                             </div>
                         </div>
                     </div>
-
+                    <input type="text" name="jenis_surat" value="{{ session('jenis_surat') }}" hidden>
                     <!-- Footer Card (Action Buttons) -->
                     <div class="card-footer bg-light text-center py-4">
                         <button type="reset" class="btn btn-warning me-2">Batal</button>
                         <button type="submit" name="submit" class="btn btn-success">Submit</button>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
     </div>

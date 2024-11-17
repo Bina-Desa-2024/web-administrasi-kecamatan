@@ -20,13 +20,8 @@ return new class extends Migration
             $table->string("jenis_kelamin");
             $table->string("pekerjaan");
             $table->string("agama");
-            $table->string("rt");
-            $table->string("rw");
-            $table->string("desa");
-            $table->string("dusun");
-            $table->string("kecamatan");
-            $table->string("kota");
-            $table->text("keterangan_keramaian");
+            $table->string("alamat");
+            $table->text("acara_keramaian");
             $table->date("dimulai_keramaian");
             $table->date("berakhir_keramaian");
             $table->string("lokasi_keramaian");

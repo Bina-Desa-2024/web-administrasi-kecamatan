@@ -25,6 +25,7 @@ return new class extends Migration
             $table->date("tgl_lahir_tidak_mampu");
             $table->string("nik_tidak_mampu");
             $table->string("alamat_tidak_mampu");
+            $table->text("keterangan");
             $table->string("status_surat")->default('pending');
             $table->timestamps();
         });
