@@ -159,12 +159,12 @@
     <header class="header">
         <img src="https://getasanbersinar.files.wordpress.com/2016/02/logo-kabupaten-semarang-jawa-tengah.png" alt="Logo Kabupaten Semarang">
         <div>
-            <p class="kablogo">PEMERINTAH KABUPATEN BENGKAYANG</p>
-            <p class="keclogo">DESA RUKMA JAYA</p>
-            <p class="kedlogo">KECAMATAN SUNGAI RAYA KEPULAUAN</p>
+            <p class="kablogo">PEMERINTAH KABUPATEN (Nama Kabupaten)</p>
+            <p class="keclogo">DESA (Nama Desa)</p>
+            <p class="kedlogo">KECAMATAN (Nama Kecamatan)</p>
             <div class="alamat-kodepos">
-                <p class="kodeposlogo">Kode Pos : 79271</p>
-                <p class="alamatlogo">Alamat : Jalan Raya Desa Rukma Jaya</p>
+                <p class="kodeposlogo">Kode Pos : (kode pos desa)</p>
+                <p class="alamatlogo">Alamat : (Alamat desa)</p>
             </div>
         </div>
     </header>
@@ -186,12 +186,12 @@
         <div class="pair-container">
             <span class="label">Nama Lengkap</span>
             <span class="colon">:</span>
-            <span class="value"><strong>ALHADI</strong></span>
+            <span class="value"><strong>(Yang bertanda tangan)</strong></span>
         </div>
         <div class="pair-container">
             <span class="label">Jabatan</span>
             <span class="colon">:</span>
-            <span class="value"><strong>Kepala Desa Rukma Jaya, Kecamatan Sungai Raya Kepulauan, Kab. Bengkayang</strong></span>
+            <span class="value"><strong>(Jabatan yang bertanda tangan)</strong></span>
         </div>
         <br>
         <p>Dengan ini memberikan Surat Keterangan Usaha kepada:</p>
@@ -213,7 +213,7 @@
         <div class="pair-container">
             <span class="label">Alamat</span>
             <span class="colon">:</span>
-            <span class="value"><strong>{{ $suketusaha->dusun }}</strong></span>
+            <span class="value"><strong>{{ $suketusaha->alamat }}</strong></span>
         </div>
         <div class="pair-container">
             <span class="label">Desa/Kel</span>
@@ -231,7 +231,7 @@
             <span class="value"><strong>{{ $suketusaha->kota }}</strong></span>
         </div>
         <br>
-        <p>Berdasarkan Surat Pernyataan Izin Tetangga tanggal …….. Bulan Desember Tahun 2022 bahwa dengan ini yang bersangkutan memang benar memiliki usaha dengan keterangan:</p>
+        <p>Berdasarkan Surat Pernyataan Izin Tetangga tanggal {{ $suketusaha->created_at->format('d') }} Bulan {{ $suketusaha->created_at->format('F') }} Tahun {{ $suketusaha->created_at->format('Y') }} bahwa dengan ini yang bersangkutan memang benar memiliki usaha dengan keterangan:</p>
         <ol>
             <li>
                 <span class="label">1. Nama Usaha</span>
@@ -284,13 +284,12 @@
     </div>
 
     <div class="signature">
-        <p>{{ $suketusaha->desa }}</p>
-        <p>{{ $suketusaha->tanggal }}</p>
+        <p>(Nama Desa), {{ date('d F Y') }}</p>
         <p>Mengetahui,</p>
-        <p>Kepala Desa</p>
+        <p>(Jabatan yang bertanda tangan)</p>
         <br>
         <br>
-        <p><strong>ALHADI</strong></p>
+        <p><strong>(Yang Bertanda Tangan)</strong></p>
     </div>
 
     <script>

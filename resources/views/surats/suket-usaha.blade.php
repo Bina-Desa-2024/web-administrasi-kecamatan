@@ -21,49 +21,45 @@
                                 <div class="mb-3">
                                     <label class="form-label fw-semibold">Nama Lengkap</label>
                                     <input type="text" name="nama" class="form-control"
-                                        placeholder="Masukkan Nama Lengkap" readonly
-                                        value="{{ session('penduduk') ? session('penduduk')->nama : '' }}">
+                                        placeholder="Masukkan Nama Lengkap" 
+                                        value="{{ session('penduduk') ? session('penduduk')->nama : '' }}" required>
                                 </div>
                                 <div class="mb-3">
-                                    <label class="form-label fw-semibold">Tempat, Tgl Lahir</label>
-                                    <input type="text" name="tempat" value="{{ session('penduduk') ? session('penduduk')->tempat : '' }}" hidden>
-                                    <input type="text" name="tgl_lahir" value="{{ session('penduduk') ? session('penduduk')->tgl_lahir : '' }}" hidden>
-                                    <input type="text" class="form-control"
-                                        placeholder="Masukkan Tempat, Tgl Lahir" required readonly
-                                        value="{{ session('penduduk') ? session('penduduk')->tempat . ', ' . \Carbon\Carbon::parse(session('penduduk')->tgl_lahir)->translatedFormat('d F Y') : '' }}">
+                                    <label class="form-label fw-semibold">Tempat Lahir</label>
+                                    <input placeholder="Masukkan Tempat Lahir"  class="form-control" type="text" name="tempat" value="{{ session('penduduk') ? session('penduduk')->tempat : '' }}" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label fw-semibold">Tanggal Lahir</label>
+                                    <input placeholder="Masukkan Tanggal Lahir"  class="form-control" type="text" name="tgl_lahir" value="{{ session('penduduk') ? session('penduduk')->tgl_lahir : '' }}" required>
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label fw-semibold">Pekerjaan</label>
                                     <input type="text" name="pekerjaan" class="form-control" value="{{ session('penduduk') ? session('penduduk')->pekerjaan : '' }}"
-                                        placeholder="Masukkan Pekerjaan" required readonly>
+                                        placeholder="Masukkan Pekerjaan" required >
                                 </div>
-                                <div class="mb-3">
-                                    <label class="form-label fw-semibold">Alamat</label>
-                                    <input type="text" name="dusun" value="{{ session('penduduk') ? session('penduduk')->dusun : '' }}" hidden>
-                                    <input type="text" name="rt" value="{{ session('penduduk') ? session('penduduk')->rt : '' }}" hidden>
-                                    <input type="text" name="rw" value="{{ session('penduduk') ? session('penduduk')->rw : '' }}" hidden>
-                                    <input type="text" class="form-control"
-                                        placeholder="Masukkan Tempat, Tgl Lahir" required readonly
-                                        value="{{ session('penduduk') ? session('penduduk')->dusun . ' ' . session('penduduk')->rt . ' ' . session('penduduk')->rw : ''}}">
-                                </div>
+                                
                             </div>
 
                             <!-- Right Column -->
                             <div class="col-md-6">
                                 <div class="mb-3">
-                                    <label class="form-label fw-semibold">Desa/Kel</label>
+                                    <label class="form-label fw-semibold">Alamat</label>
+                                    <textarea name="alamat" class="form-control" placeholder="Masukkan Dusun, RT, RW" required></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label fw-semibold">Desa/Kelurahan</label>
                                     <input type="text" name="desa" class="form-control"
-                                        placeholder="Masukkan Desa/Kel" required readonly value="{{ session('penduduk') ? session('penduduk')->desa : '' }}">
+                                        placeholder="Masukkan Desa/Kelurahan" required  >
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label fw-semibold">Kecamatan</label>
                                     <input type="text" name="kecamatan" class="form-control"
-                                        placeholder="Masukkan Kecamatan" required readonly value="{{ session('penduduk') ? session('penduduk')->kecamatan : '' }}">
+                                        placeholder="Masukkan Kecamatan" required  >
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label fw-semibold">Kabupaten/Kota</label>
                                     <input type="text" name="kota" class="form-control"
-                                        placeholder="Masukkan Kabupaten/Kota" required readonly value="{{ session('penduduk') ? session('penduduk')->kota : '' }}">
+                                        placeholder="Masukkan Kabupaten/Kota" required  >
                                 </div>
                             </div>
                         </div>
@@ -101,13 +97,20 @@
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label class="form-label fw-semibold">Jenis Tempat Usaha</label>
-                                    <input type="text" name="jenis_tempat" class="form-control"
-                                        placeholder="Masukkan Jenis Tempat Usaha" required>
+                                    <select name="jenis_tempat" class="form-control" required>
+                                        <option value="" disabled {{ old('jenis_tempat') ? '' : 'selected' }}>--Pilih Jenis Tempat Usaha--</option>
+                                        <option value="Menetap" {{ old('jenis_tempat') == 'Menetap' ? 'selected' : '' }}>Menetap</option>
+                                        <option value="Bergerak" {{ old('jenis_tempat') == 'Bergerak' ? 'selected' : '' }}>Bergerak</option>
+                                    </select>
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label fw-semibold">Status Tempat Usaha</label>
-                                    <input type="text" name="status_tempat" class="form-control"
-                                        placeholder="Masukkan Status Tempat Usaha" required>
+                                    <select name="status_tempat" class="form-control" required>
+                                        <option value="" disabled {{ old('status_tempat') ? '' : 'selected' }}>--Pilih Status Tempat Usaha--</option>
+                                        <option value="Milik Sendiri" {{ old('status_tempat') == 'Milik Sendiri' ? 'selected' : '' }}>Milik Sendiri</option>
+                                        <option value="Sewa" {{ old('status_tempat') == 'Sewa' ? 'selected' : '' }}>Sewa</option>
+                                        <option value="Pinjam" {{ old('status_tempat') == 'Pinjam' ? 'selected' : '' }}>Pinjam</option>
+                                    </select>
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label fw-semibold">Bentuk Usaha</label>
@@ -115,24 +118,24 @@
                                         placeholder="Masukkan Bentuk Usaha" required>
                                 </div>
                                 <div class="mb-3">
-                                    <label class="form-label fw-semibold">Modal Usaha</label>
-                                    <input type="text" name="modal_usaha" class="form-control"
-                                        placeholder="Masukkan Modal Usaha" required>
+                                    <label class="form-label fw-semibold">Modal Usaha (Rupiah)</label>
+                                    <input type="number" name="modal_usaha" class="form-control"
+                                        placeholder="Masukkan Modal Usaha (Rupiah)" required>
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label fw-semibold">Jumlah Tenaga Kerja</label>
-                                    <input type="text" name="tenaga_kerja" class="form-control"
+                                    <input type="number" name="tenaga_kerja" class="form-control"
                                         placeholder="Masukkan Jumlah Tenaga Kerja" required>
                                 </div>
                                 <div class="mb-3">
-                                    <label class="form-label fw-semibold">Mulai Usaha Sejak</label>
-                                    <input type="date" name="mulai_usaha" class="form-control"
+                                    <label class="form-label fw-semibold">Mulai Usaha Sejak (Tahun)</label>
+                                    <input type="number" name="mulai_usaha" class="form-control"
                                         placeholder="Masukkan Tahun Mulai Usaha" required>
                                 </div>
                             </div>
                         </div>
                     </div>
-
+                    <input type="text" name="jenis_surat" value="{{ session('jenis_surat') }}" hidden>
                     <!-- Footer Card (Action Buttons) -->
                     <div class="card-footer bg-light text-center py-3">
                         <a href="/buatsurat" class="btn btn-warning me-2">Batal</a>

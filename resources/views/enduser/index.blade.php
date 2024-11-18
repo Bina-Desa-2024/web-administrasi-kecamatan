@@ -19,7 +19,18 @@
     font-weight: 500;
 }
 </style>
-
+@if (session('success'))
+<div class="alert alert-success alert-dismissible fade show mx-2" role="alert">
+    {{ session('success') }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+@endif
+@if (session('error'))
+    <div class="alert alert-danger alert-dismissible fade show mx-2" role="alert">
+        {{ session('error') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+@endif
 <section class="section hero text-center d-flex align-items-center justify-content-center min-vh-100" id="home" aria-label="hero" style="background-color: #e9f5f2;"> <!-- Light teal background -->
     <div class="container">
         <div class="hero-content text-center text-md-start d-flex flex-column flex-md-row align-items-center justify-content-between">

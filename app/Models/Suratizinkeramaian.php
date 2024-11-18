@@ -5,23 +5,22 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Sukettidakmampu extends Model
+class Suratizinkeramaian extends Model
 {
     use HasFactory;
     protected $fillable = [
         'jenis_surat',
         'nama',
-        'tempat',
-        'tgl_lahir',
-        'pekerjaan',
         'nik',
+        'jenis_kelamin',
+        'pekerjaan',
+        'agama',
         'alamat',
-        'nama_tidak_mampu',
-        'tempat_tidak_mampu',
-        'tgl_lahir_tidak_mampu',
-        'nik_tidak_mampu',
-        'alamat_tidak_mampu',
+        'keterangan_keramaian',
+        'dimulai_keramaian',
+        'berakhir_keramaian',
+        'lokasi_keramaian',
         'keterangan',
         'status_surat',
-    ];
+    ];    
 }
