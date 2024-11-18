@@ -22,50 +22,52 @@
                                 <div class="mb-3">
                                     <label class="form-label fw-semibold">Nama Lengkap</label>
                                     <input type="text" name="nama" class="form-control"
-                                        placeholder="Masukkan Nama Lengkap" readonly
+                                        placeholder="Masukkan Nama Lengkap" 
                                         value="{{ $suketusaha->nama}}">
                                 </div>
                                 <div class="mb-3">
-                                    <label class="form-label fw-semibold">Tempat, Tgl Lahir</label>
-                                    <input type="text" name="tempat" value="{{ $suketusaha->tempat}}" hidden>
-                                    <input type="text" name="tgl_lahir" value="{{ $suketusaha->tgl_lahir}}" hidden>
+                                    <label class="form-label fw-semibold">Tempat Lahir</label>
                                     <input type="text" class="form-control"
-                                        placeholder="Masukkan Tempat, Tgl Lahir" required readonly
+                                        placeholder="Masukkan Tempat Lahir" required 
+                                        value="{{ $suketusaha->tempat}}">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label fw-semibold">Tgl Lahir</label>
+                                    <input type="text" class="form-control"
+                                        placeholder="Masukkan Tgl Lahir" required 
                                         value="{{ $suketusaha->tgl_lahir}}">
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label fw-semibold">Pekerjaan</label>
                                     <input type="text" name="pekerjaan" class="form-control" 
                                     value="{{ $suketusaha->pekerjaan}}"
-                                        placeholder="Masukkan Pekerjaan" required readonly>
+                                        placeholder="Masukkan Pekerjaan" required >
                                 </div>
-                                <div class="mb-3">
-                                    <label class="form-label fw-semibold">Alamat</label>
-                                    {{-- <input type="text" name="dusun" value="{{ session('penduduk') ? session('penduduk')->dusun : '' }}" hidden>
-                                    <input type="text" name="rt" value="{{ session('penduduk') ? session('penduduk')->rt : '' }}" hidden>
-                                    <input type="text" name="rw" value="{{ session('penduduk') ? session('penduduk')->rw : '' }}" hidden> --}}
-                                    <input type="text" class="form-control"
-                                        placeholder="Masukkan Tempat, Tgl Lahir" required readonly
-                                        value="{{ $suketusaha->dusun}}">
-                                </div>
+                                
                             </div>
 
                             <!-- Right Column -->
                             <div class="col-md-6">
                                 <div class="mb-3">
+                                    <label class="form-label fw-semibold">Alamat</label>
+                                    <input type="text" class="form-control"
+                                        placeholder="Masukkan Alamat" required 
+                                        value="{{ $suketusaha->alamat}}">
+                                </div>
+                                <div class="mb-3">
                                     <label class="form-label fw-semibold">Desa/Kel</label>
                                     <input type="text" name="desa" class="form-control"
-                                        placeholder="Masukkan Desa/Kel" required readonly value="{{ $suketusaha->desa}}">
+                                        placeholder="Masukkan Desa/Kel" required  value="{{ $suketusaha->desa}}">
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label fw-semibold">Kecamatan</label>
                                     <input type="text" name="kecamatan" class="form-control"
-                                        placeholder="Masukkan Kecamatan" required readonly value="{{ $suketusaha->kecamatan}}">
+                                        placeholder="Masukkan Kecamatan" required  value="{{ $suketusaha->kecamatan}}">
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label fw-semibold">Kabupaten/Kota</label>
                                     <input type="text" name="kota" class="form-control"
-                                        placeholder="Masukkan Kabupaten/Kota" required readonly value="{{ $suketusaha->kota}}">
+                                        placeholder="Masukkan Kabupaten/Kota" required  value="{{ $suketusaha->kota}}">
                                 </div>
                             </div>
                         </div>
@@ -126,20 +128,20 @@
                                         value="{{ $suketusaha->bentuk_usaha}}">
                                 </div>
                                 <div class="mb-3">
-                                    <label class="form-label fw-semibold">Modal Usaha</label>
-                                    <input type="text" name="modal_usaha" class="form-control"
+                                    <label class="form-label fw-semibold">Modal Usaha (Rupiah)</label>
+                                    <input type="number" name="modal_usaha" class="form-control"
                                         placeholder="Masukkan Modal Usaha" required
                                         value="{{ $suketusaha->modal_usaha}}">
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label fw-semibold">Jumlah Tenaga Kerja</label>
-                                    <input type="text" name="tenaga_kerja" class="form-control"
+                                    <input type="number" name="tenaga_kerja" class="form-control"
                                         placeholder="Masukkan Jumlah Tenaga Kerja" required
                                         value="{{ $suketusaha->tenaga_kerja}}">
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label fw-semibold">Mulai Usaha Sejak</label>
-                                    <input type="date" name="mulai_usaha" class="form-control"
+                                    <input type="number" name="mulai_usaha" class="form-control"
                                         placeholder="Masukkan Tahun Mulai Usaha" required
                                         value="{{ $suketusaha->mulai_usaha}}">
                                 </div>

@@ -1,7 +1,7 @@
 @extends('layouts.userlayout')
 @section('child')
     <div class="container">
-        <h2 class="mt-5 text-center text-success">Form Informasi Surat</h2>
+        <h2 class="mt-5 text-center text-success">Form Informasi Surat Keterangan Tidak Mampu</h2>
     </div>
     <div class="container py-5" style="min-height: 100vh;">
         <div class="row justify-content-center">
@@ -41,9 +41,7 @@
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label class="form-label fw-semibold">Alamat</label>
-                                <input type="text" class="form-control"
-                                    placeholder="Masukkan Kecamatan" required
-                                    value="{{ session('penduduk') ? session('penduduk')->alamat : '' }}">
+                                <textarea name="alamat" class="form-control" placeholder="Masukkan Alamat" required></textarea>
                             </div>
                         </div>
 
@@ -69,7 +67,7 @@
                             <div class="col-md-6 mb-3">
                                 <label class="form-label fw-semibold">Nik</label>
                                 <input type="text" name="nik_tidak_mampu" class="form-control"
-                                    placeholder="Masukkan Jenis Tempat Usaha" required>
+                                    placeholder="Masukkan Nik" required>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label class="form-label fw-semibold">Alamat</label>

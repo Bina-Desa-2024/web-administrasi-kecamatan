@@ -8,6 +8,7 @@ use App\Models\Daftarsurat;
 use App\Models\Suketusaha;
 use App\Models\Suketkelakuanbaik;
 use App\Models\Sukettidakmampu;
+use App\Models\Suratizinkeramaian;
 
 Route::get('/', function () {
     return view('enduser.index');
@@ -51,7 +52,7 @@ Route::get('/Dashboard', function () {
     $models = [
         Suketusaha::class,
         Sukettidakmampu::class,
-        Suketkelakuanbaik::class
+        Suratizinkeramaian::class,
     ];
     $completedCount = 0;
     $pendingCount = 0;
@@ -75,7 +76,7 @@ Route::get('/PermintaanSurat', function () {
     $models = [
         Suketusaha::class,
         Sukettidakmampu::class,
-        Suketkelakuanbaik::class,
+        Suratizinkeramaian::class,
     ];
     $suratPending = collect();
     foreach ($models as $model) {
@@ -91,7 +92,7 @@ Route::get('/SuratSelesai', function () {
     $models = [
         Suketusaha::class,
         Sukettidakmampu::class,
-        Suketkelakuanbaik::class,
+        Suratizinkeramaian::class,
     ];
     $suratCompleted = collect();
     foreach ($models as $model) {

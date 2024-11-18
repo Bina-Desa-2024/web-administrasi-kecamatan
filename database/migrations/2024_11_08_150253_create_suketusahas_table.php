@@ -30,9 +30,9 @@ return new class extends Migration
             $table->string("status_tempat");
             $table->string("bidang_usaha");
             $table->string("bentuk_usaha");
-            $table->string("modal_usaha");
-            $table->string("tenaga_kerja");
-            $table->date("mulai_usaha");
+            $table->integer("modal_usaha");
+            $table->integer("tenaga_kerja");
+            $table->integer("mulai_usaha");
             $table->string("status_surat")->default('pending');
             $table->timestamps();
         });
