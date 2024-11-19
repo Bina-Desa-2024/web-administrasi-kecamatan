@@ -30,18 +30,18 @@
                                     required value="{{ session('penduduk') ? session('penduduk')->pekerjaan : '' }}">
                             </div>
                             <div class="col-md-6 mb-3">
-                                <label class="form-label fw-semibold">Tempat, Tgl Lahir</label>
-                                <input type="text" name="tempat"
-                                    value="{{ session('penduduk') ? session('penduduk')->tempat : '' }}" hidden>
-                                <input type="text" name="tgl_lahir"
-                                    value="{{ session('penduduk') ? session('penduduk')->tgl_lahir : '' }}" hidden>
-                                <input type="text" name="tempat_tgl_lahir" class="form-control"
-                                    placeholder="Masukkan Tempat, Tgl Lahir" required
-                                    value="{{ session('penduduk') ? session('penduduk')->tempat . ' ' . session('penduduk')->tgl_lahir : '' }}">
+                                <label class="form-label fw-semibold">Tempat Lahir</label>
+                                <input class="form-control" type="text" name="tempat" placeholder="Masukkan Tempat Lahir"
+                                    value="{{ session('penduduk') ? session('penduduk')->tempat : '' }}" >
                             </div>
                             <div class="col-md-6 mb-3">
-                                <label class="form-label fw-semibold">Alamat</label>
-                                <textarea name="alamat" class="form-control" placeholder="Masukkan Alamat" required></textarea>
+                                <label class="form-label fw-semibold">Tanggal Lahir</label>
+                                <input class="form-control" type="date" name="tgl_lahir" placeholder="Masukkan Tanggal Lahir"
+                                    value="{{ session('penduduk') ? session('penduduk')->tgl_lahir : '' }}" >
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label fw-semibold">Alamat Lengkap</label>
+                                <textarea name="alamat" class="form-control" placeholder="Masukkan Dusun, RT, RW, Desa, Kec, Kab" required></textarea>
                             </div>
                         </div>
 
@@ -57,11 +57,11 @@
                             <div class="col-md-6 mb-3">
                                 <label class="form-label fw-semibold">Tempat</label>
                                 <input type="text" name="tempat_tidak_mampu" class="form-control"
-                                    placeholder="Masukkan Tempat" required>
+                                    placeholder="Masukkan Tempat Lahir" required>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label class="form-label fw-semibold">Tanggal Lahir</label>
-                                <input type="text" name="tgl_lahir_tidak_mampu" class="form-control"
+                                <input type="date" name="tgl_lahir_tidak_mampu" class="form-control"
                                     placeholder="Masukkan Tanggal lahir" required>
                             </div>
                             <div class="col-md-6 mb-3">
@@ -70,8 +70,8 @@
                                     placeholder="Masukkan Nik" required>
                             </div>
                             <div class="col-md-6 mb-3">
-                                <label class="form-label fw-semibold">Alamat</label>
-                                <textarea name="alamat_tidak_mampu" class="form-control" rows="2" placeholder="Masukkan Alamat Usaha" required></textarea>
+                                <label class="form-label fw-semibold">Alamat Lengkap</label>
+                                <textarea name="alamat_tidak_mampu" class="form-control" rows="2" placeholder="Masukkan Dusun, RT, RW, Desa, Kec, Kab" required></textarea>
                             </div>
                         </div>
                     </div>

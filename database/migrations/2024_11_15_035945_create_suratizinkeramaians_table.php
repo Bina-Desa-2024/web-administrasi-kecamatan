@@ -25,7 +25,7 @@ return new class extends Migration
             $table->date("dimulai_keramaian");
             $table->date("berakhir_keramaian");
             $table->string("lokasi_keramaian");
-            $table->string("keterangan");
+            $table->string("keterangan")->nullable();
             $table->string("status_surat")->default('pending');
         });
     }

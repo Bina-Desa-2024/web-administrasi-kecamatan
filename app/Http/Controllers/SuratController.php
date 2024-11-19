@@ -28,9 +28,11 @@ class SuratController extends Controller
                 $jenis_surat = $request->input('jenis_surat');
                 return redirect("/suket-usaha")->with('penduduk', $penduduk)->with('jenis_surat',$jenis_surat);
             } else if($request->input('jenis_surat') == 'Surat Keterangan Tidak Mampu'){
-                return redirect("/suket-tidak-mampu")->with('penduduk', $penduduk);
+                $jenis_surat = $request->input('jenis_surat');
+                return redirect("/suket-tidak-mampu")->with('penduduk', $penduduk)->with('jenis_surat',$jenis_surat);
             }else if($request->input('jenis_surat') == 'Surat Izin Keramaian'){
-                return redirect("/surat-izin-keramaian")->with('penduduk', $penduduk);
+                $jenis_surat = $request->input('jenis_surat');
+                return redirect("/surat-izin-keramaian")->with('penduduk', $penduduk)->with('jenis_surat',$jenis_surat);
             }
             else {
                 return redirect('/'); // Tambahkan 'return' di sini
@@ -71,6 +73,7 @@ class SuratController extends Controller
             Suketusaha::create($validatedData);
             return redirect('/')->with('success', 'Surat berhasil direquest, silahkan datang ke desa setelah 2/3 hari kerja untuk mengambil surat tersebut');
         } elseif($jenis_surat == 'Surat Keterangan Tidak Mampu'){
+            // dd($request);
             $validatedData = $request->validate([
                 'nama' => 'required',
                 'tempat' => 'required',
@@ -83,7 +86,6 @@ class SuratController extends Controller
                 'tgl_lahir_tidak_mampu' => 'required',
                 'nik_tidak_mampu' => 'required',
                 'alamat_tidak_mampu' => 'required',
-                'keterangan' => 'required',
             ]);
             
             Sukettidakmampu::create($validatedData);
@@ -100,7 +102,6 @@ class SuratController extends Controller
                 'dimulai_keramaian' => 'required',
                 'berakhir_keramaian' => 'required',
                 'lokasi_keramaian' => 'required',
-                'keterangan' => 'required',
             ]);
             Suratizinkeramaian::create($validatedData);
             return redirect('/')->with('success', 'Surat berhasil direquest, silahkan datang ke desa setelah 2/3 hari kerja untuk mengambil surat tersebut');
