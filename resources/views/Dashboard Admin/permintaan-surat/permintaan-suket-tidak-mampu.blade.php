@@ -1,4 +1,4 @@
-@extends('layouts.userlayout')
+@extends('layouts.Dashboardlayout')
 @section('child')
     <div class="container">
         <h2 class="mt-5 text-center text-success">Form Informasi Surat Keterangan Tidak Mampu</h2>
@@ -41,9 +41,7 @@
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label class="form-label fw-semibold">Alamat Lengkap</label>
-                                <textarea name="alamat" class="form-control" placeholder="Masukkan Dusun, RT, RW, Desa, Kec, Kab" required>
-                                    value="{{ $sukettidakmampu->alamat }}" >
-                                </textarea>
+                                <textarea name="alamat" class="form-control" placeholder="Masukkan Dusun, RT, RW, Desa, Kec, Kab" required>{{ $sukettidakmampu->alamat }}</textarea>
                             </div>
                         </div>
 
@@ -54,26 +52,26 @@
                             <div class="col-md-6 mb-3">
                                 <label class="form-label fw-semibold">Nama</label>
                                 <input type="text" name="nama_tidak_mampu" class="form-control"
-                                    placeholder="Masukkan Nama" required>
+                                    placeholder="Masukkan Nama" required value="{{ $sukettidakmampu->nama_tidak_mampu }}">
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label class="form-label fw-semibold">Tempat</label>
                                 <input type="text" name="tempat_tidak_mampu" class="form-control"
-                                    placeholder="Masukkan Tempat Lahir" required>
+                                    placeholder="Masukkan Tempat Lahir" required value="{{ $sukettidakmampu->tempat_tidak_mampu }}">
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label class="form-label fw-semibold">Tanggal Lahir</label>
                                 <input type="date" name="tgl_lahir_tidak_mampu" class="form-control"
-                                    placeholder="Masukkan Tanggal lahir" required>
+                                    placeholder="Masukkan Tanggal lahir" required value="{{ $sukettidakmampu->tgl_lahir_tidak_mampu }}">
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label class="form-label fw-semibold">Nik</label>
                                 <input type="text" name="nik_tidak_mampu" class="form-control"
-                                    placeholder="Masukkan Nik" required>
+                                    placeholder="Masukkan Nik" required value="{{ $sukettidakmampu->nik_tidak_mampu }}">
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label class="form-label fw-semibold">Alamat Lengkap</label>
-                                <textarea name="alamat_tidak_mampu" class="form-control" rows="2" placeholder="Masukkan Dusun, RT, RW, Desa, Kec, Kab" required></textarea>
+                                <textarea name="alamat_tidak_mampu" class="form-control" rows="2" placeholder="Masukkan Dusun, RT, RW, Desa, Kec, Kab" required>{{ $sukettidakmampu->alamat_tidak_mampu }}</textarea>
                             </div>
                         </div>
                     </div>
